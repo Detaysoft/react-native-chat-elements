@@ -1,4 +1,4 @@
-import {StyleProp} from 'react-native';
+import {GestureResponderEvent, StyleProp} from 'react-native';
 
 export interface IAvatarProps {
   style?: Object;
@@ -14,5 +14,15 @@ export interface IChatButtonProps {
   iconFamily?: StyleProp;
   contentStyle?: object;
   title?: string;
-  onPress?: GestureResponderEvent;
+  onPress?: (event: GestureResponderEvent) => void;
+}
+
+export interface IPopupProps {
+  source?: string;
+  imageStyle?: object;
+  title?: string;
+  titleStyle?: object;
+  text?: string;
+  textStyle?: object;
+  button: IChatButtonProps;
 }

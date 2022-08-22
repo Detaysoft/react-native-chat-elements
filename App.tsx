@@ -11,6 +11,8 @@ const App = () => {
         return components.avatar;
       case 'chatButton':
         return components.chatButton;
+      case 'popup':
+        return components.popup;
       default:
         break;
     }
@@ -24,6 +26,9 @@ const App = () => {
           </View>
           <View style={styles.button}>
             <Button title="chatButton" onPress={() => setshow('chatButton')} />
+          </View>
+          <View style={styles.button}>
+            <Button title="popup" onPress={() => setshow('popup')} />
           </View>
         </View>
         <View
