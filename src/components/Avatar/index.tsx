@@ -1,13 +1,9 @@
 import React, {FC} from 'react';
 import {Image, View} from 'react-native';
 import styles from './avatar-css';
+import {IAvatarProps} from '../../type';
 
-type Avatar = {
-  style?: Object;
-  source?: string;
-};
-
-const Avatar: FC<Avatar> = (props: Avatar) => {
+const Avatar: FC<IAvatarProps> = (props: IAvatarProps) => {
   return (
     <View>
       {props.source ? (

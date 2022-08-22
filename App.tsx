@@ -9,6 +9,8 @@ const App = () => {
     switch (show) {
       case 'avatar':
         return components.avatar;
+      case 'chatButton':
+        return components.chatButton;
       default:
         break;
     }
@@ -19,6 +21,9 @@ const App = () => {
         <View style={styles.header}>
           <View style={styles.button}>
             <Button title="avatar" onPress={() => setshow('avatar')} />
+          </View>
+          <View style={styles.button}>
+            <Button title="chatButton" onPress={() => setshow('chatButton')} />
           </View>
         </View>
         <View

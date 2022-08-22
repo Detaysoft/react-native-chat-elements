@@ -1,3 +1,3 @@
 import Avatar from './Avatar';
-
-export {Avatar};
+import ChatButton from './ChatButton';
+export {Avatar, ChatButton};
