@@ -1,6 +1,12 @@
 import React from 'react';
 import {Text} from 'react-native';
-import {Avatar, ChatButton, Popup, CustomActionSheet} from './components';
+import {
+  Avatar,
+  ChatButton,
+  Popup,
+  CustomActionSheet,
+  ChatItem,
+} from './components';
 
 const components = {
   avatar: <Avatar source="../assets/download.png" />,
@@ -59,6 +65,29 @@ const components = {
       cancelButtonIndex={2}
       destructiveButtonIndex={2}
       onPress={index => console.log(index)}
+    />
+  ),
+  chatItem: (
+    <ChatItem
+      badge={1}
+      date="now"
+      title="bensu"
+      listType="chatList"
+      noImage={false}
+      source={'../assets/calendar.jpg'}
+      type={'single'}
+      renderTypes={() => [
+        'Apple',
+        'Banana',
+        'cancel',
+        'Apple',
+        'Banana',
+        'cancel',
+      ]}
+      dateCustomFormat={() => 'right now'}
+      subTitleStatus={() => <Text>'waiting'</Text>}
+      handleOnPress={() => console.log('handle on press')}
+      handleOnLongPress={() => console.log('handle on long press')}
     />
   ),
 };
