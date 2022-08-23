@@ -25,6 +25,7 @@ export interface IPopupProps {
   text?: string;
   textStyle?: object;
   button: IChatButtonProps;
+  buttonTitle: string;
 }
 
 export interface IActionSheet {

@@ -1,45 +1,68 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    width: '100%',
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 50,
-    paddingVertical: 10,
-    borderColor: '#bdbdbd',
-    borderWidth: 1,
-    bottom: 70,
-    position: 'absolute',
-    zIndex: 99999,
+    marginTop: 22,
   },
-  content: {
+  modal: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  modalView: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '80%',
-    marginVertical: 20,
+    width: '100%',
+    backgroundColor: 'white',
+    borderTopRightRadius: 50,
+    borderTopLeftRadius: 50,
+    paddingVertical: 15,
+    paddingHorizontal: 35,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
-  contentTitle: {
+  modalTitle: {
     fontSize: 24,
     fontWeight: '500',
   },
-  contentText: {
+  modalText: {
     fontSize: 16,
     textAlign: 'center',
-  },
-  button: {
-    fontSize: 26,
-    width: '75%',
-    alignSelf: 'center',
   },
   image: {
     width: 100,
     height: 100,
+  },
+  button: {
+    borderRadius: 20,
+    marginTop: 10,
+    padding: 10,
+    elevation: 2,
+    fontSize: 26,
+    width: '50%',
+    alignSelf: 'center',
+  },
+  buttonOpen: {
+    backgroundColor: '#F194FF',
+  },
+  buttonClose: {
+    backgroundColor: '#2196F3',
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 

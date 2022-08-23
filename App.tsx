@@ -64,10 +64,12 @@ const styles = StyleSheet.create({
   header: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
     marginVertical: 20,
   },
   button: {
-    marginHorizontal: 2,
+    margin: 2,
   },
 });
 

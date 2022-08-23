@@ -27,8 +27,9 @@ const components = {
       text={
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua'
       }
+      buttonTitle="got it"
       button={{
-        title: 'got it',
+        title: 'show popup',
         contentStyle: {
           backgroundColor: 'blue',
           color: 'white',
@@ -36,6 +37,11 @@ const components = {
           paddingHorizontal: 20,
           borderRadius: 10,
           fontSize: 16,
+        },
+        style: {
+          position: 'absolute',
+          top: 50,
+          right: 40,
         },
         onPress: () => {
           console.log('popup clicked');
