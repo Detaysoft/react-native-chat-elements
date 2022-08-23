@@ -1,11 +1,12 @@
 import React from 'react';
+import {Text} from 'react-native';
 import {Avatar, ChatButton, Popup, CustomActionSheet} from './components';
 
 const components = {
   avatar: <Avatar source="../assets/download.png" />,
   chatButton: (
     <ChatButton
-      title="deneme"
+      // title="deneme"
       contentStyle={{
         color: 'red',
         backgroundColor: 'yellow',
@@ -14,6 +15,7 @@ const components = {
         paddingHorizontal: 20,
         fontSize: 16,
       }}
+      icon={<Text>wkenfk</Text>}
       // onlyView={true}
       onPress={() => {
         console.log('click');

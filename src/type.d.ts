@@ -1,3 +1,4 @@
+import React from 'react';
 import {GestureResponderEvent, StyleProp} from 'react-native';
 
 export interface IAvatarProps {
@@ -8,7 +9,7 @@ export interface IAvatarProps {
 export interface IChatButtonProps {
   style?: object;
   onlyView?: boolean;
-  icon?: any;
+  icon?: React.ReactComponentElement;
   iconSize?: StyleProp;
   iconColor?: StyleProp;
   iconFamily?: StyleProp;
