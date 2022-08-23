@@ -26,3 +26,12 @@ export interface IPopupProps {
   textStyle?: object;
   button: IChatButtonProps;
 }
+
+export interface IActionSheet {
+  button: IChatButtonProps;
+  title: string;
+  options: string[];
+  cancelButtonIndex: number;
+  destructiveButtonIndex: number;
+  onPress: (index: number) => void;
+}

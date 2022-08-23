@@ -1,9 +1,8 @@
 import React from 'react';
-import {Avatar, ChatButton} from './components';
-import Popup from './components/Popup';
+import {Avatar, ChatButton, Popup, CustomActionSheet} from './components';
 
 const components = {
-  avatar: <Avatar />,
+  avatar: <Avatar source="../assets/download.png" />,
   chatButton: (
     <ChatButton
       title="deneme"
@@ -23,7 +22,7 @@ const components = {
   ),
   popup: (
     <Popup
-      source={require('../assets/calendar.jpg')}
+      source="../assets/calendar.jpg"
       title={'title'}
       text={
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua'
@@ -42,6 +41,16 @@ const components = {
           console.log('popup clicked');
         },
       }}
+    />
+  ),
+  customActionSheet: (
+    <CustomActionSheet
+      button={{title: 'Open ActionSheet'}}
+      title="Which one do you like ?"
+      options={['Apple', 'Banana', 'cancel']}
+      cancelButtonIndex={2}
+      destructiveButtonIndex={2}
+      onPress={index => console.log(index)}
     />
   ),
 };

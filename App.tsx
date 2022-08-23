@@ -13,6 +13,8 @@ const App = () => {
         return components.chatButton;
       case 'popup':
         return components.popup;
+      case 'customActionSheet':
+        return components.customActionSheet;
       default:
         break;
     }
@@ -29,6 +31,12 @@ const App = () => {
           </View>
           <View style={styles.button}>
             <Button title="popup" onPress={() => setshow('popup')} />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="customActionSheet"
+              onPress={() => setshow('customActionSheet')}
+            />
           </View>
         </View>
         <View

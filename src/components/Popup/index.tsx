@@ -8,7 +8,10 @@ const Popup: FC<IPopupProps> = (props: IPopupProps) => {
   return (
     <View style={styles.container}>
       {props.source && (
-        <Image source={props.source} style={[styles.image, props.imageStyle]} />
+        <Image
+          source={{uri: props.source}}
+          style={[styles.image, props.imageStyle]}
+        />
       )}
       <View style={styles.content}>
         <Text style={[styles.contentTitle, props.titleStyle]}>

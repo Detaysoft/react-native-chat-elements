@@ -1,3 +1,5 @@
 import Avatar from './Avatar';
 import ChatButton from './ChatButton';
-export {Avatar, ChatButton};
+import Popup from './Popup';
+import CustomActionSheet from './CustomActionSheet';
+export {Avatar, ChatButton, Popup, CustomActionSheet};
