@@ -1,13 +1,14 @@
 import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {IChatItemProps} from '../../type';
-import styles from './ChatItem-css';
+import {IChatListItemProps} from '../../type';
+import Avatar from '../Avatar';
+import styles from './chatListItem-css';
 
-const index = (props: IChatItemProps) => {
+const ChatListItem = (props: IChatListItemProps) => {
   return (
     <TouchableOpacity
-      onPress={props.handleOnPress}
-      onLongPress={props.handleOnLongPress}
+      onPress={props.onPress}
+      onLongPress={props.onLongPress}
       style={styles.listItemContainer}>
       <View
         style={{
@@ -26,7 +27,7 @@ const index = (props: IChatItemProps) => {
                   ]
                 : styles.userImageArea
             }>
-            <Image source={props.source} style={styles.userImage} />
+            <Avatar source={props.avatar} style={styles.userImage} />
           </View>
         )}
       </View>
@@ -50,30 +51,12 @@ const index = (props: IChatItemProps) => {
               flexDirection: 'row',
               alignItems: 'center',
               width: '100%',
-              //whiteSpace: 'nowrap',
+              whiteSpace: 'nowrap',
               overflow: 'hidden',
-              //textOverflow: 'ellipsis',
+              textOverflow: 'ellipsis',
             }}>
-            <View>{props.subTitleStatus(props.subtitleStatus)}</View>
-            {props.renderTypes().map((x: any, i: number) => {
-              if (x === ' ') return;
-              if (typeof x === 'object') {
-                return (
-                  <View key={i} style={{padding: 0, margin: -6}}>
-                    {x}
-                  </View>
-                );
-              }
-              return (
-                <Text
-                  key={i}
-                  style={styles.chatMessage}
-                  ellipsizeMode="tail"
-                  numberOfLines={1}>
-                  {x}
-                </Text>
-              );
-            })}
+            <View>{props.subtitleStatusFunc?.(props.subtitleStatus)}</View>
+            {props.messageRenderer?.()}
           </View>
           {props.badge > 0 && (
             <View style={styles.messageCount}>
@@ -99,7 +82,7 @@ const index = (props: IChatItemProps) => {
               }}
               ellipsizeMode="tail"
               numberOfLines={1}>
-              {props.dateCustomFormat() || ' '}
+              {props.dateCustomFormat?.() || ' '}
             </Text>
           </View>
         )}
@@ -108,4 +91,4 @@ const index = (props: IChatItemProps) => {
   );
 };
 
-export default index;
+export default ChatListItem;

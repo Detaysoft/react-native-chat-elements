@@ -1,33 +1,57 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {IChatListProps} from '../../type';
-import {ChatItem} from '..';
-import styles from './ChatList-css';
-import {Text} from 'react-native';
+import {ChatListItem} from '..';
+import styles from './chatList-css';
+import {FlatList, Text, View} from 'react-native';
 
-const ChatList = (props: IChatListProps) => {
+const ChatList: FC<IChatListProps> = (props: IChatListProps) => {
+  const MemorizedChatListItem = React.memo(ChatListItem);
+
+  const chatlistRenderItem = ({item}: any) => {
+    return (
+      <MemorizedChatListItem
+        id={item.id}
+        title={item.name}
+        subtitle={item.lastMessage}
+        subtitleStatus={item.lastMessageStatus}
+        avatar={item.photo}
+        date={item.date || null}
+        badge={item.inUnseen > 0 ? item.inUnseen : null}
+        status={item.status}
+        platform={item.platform}
+        type={item.type}
+        listType={'chatList'}
+        onPress={item.onItemPress}
+        onLongPress={item.onItemLongPress}
+        messageRenderer={props.messageRenderer}
+        subtitleStatusFunc={props.subtitleStatusFunc}
+        dateCustomFormat={props.dateCustomFormat}
+      />
+    );
+  };
+
   return (
-    <ChatItem
-      badge={1}
-      date="now"
-      title="bensu"
-      listType="chatList"
-      noImage={false}
-      source={require('../../../assets/calendar.jpg')}
-      type={'single'}
-      renderTypes={() => [
-        'Apple',
-        'Banana',
-        'cancel',
-        'Apple',
-        'Banana',
-        'cancel',
-      ]}
-      dateCustomFormat={() => 'right now'}
-      subTitleStatus={() => <Text>'waiting'</Text>}
-      handleOnPress={() => console.log('handle on press')}
-      handleOnLongPress={() => console.log('handle on long press')}
-    />
+    <View style={[styles.chatList, props.containerStyle]}>
+      <View style={[styles.emptyChat, props.messageContainerStyle]}>
+        {props.dataSource.length < 1 && (
+          <Text
+            style={[
+              styles.emptyChatMessage,
+              props.emptyChatMessageContainerStyle,
+            ]}>
+            {'Konuşma listeniz boş.'}
+          </Text>
+        )}
+      </View>
+      <FlatList
+        data={props.dataSource}
+        keyExtractor={item => item.id}
+        renderItem={chatlistRenderItem}
+      />
+    </View>
   );
 };
 
 export default ChatList;
+
+ChatList.defaultProps = {};

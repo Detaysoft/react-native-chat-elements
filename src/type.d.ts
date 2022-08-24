@@ -42,22 +42,40 @@ export interface IActionSheet {
   onPress: (index: number) => void;
 }
 
-export interface IChatItemProps {
-  title: string;
+export interface IChatListItemProps {
+  id?: string;
+  title?: string;
   subtitle?: string;
   subtitleStatus?: any;
   badge: number;
-  noImage: bool;
-  source?: ImageSourcePropType;
-  date: any;
+  avatar?: ImageSourcePropType;
+  noImage?: bool;
+  date?: any;
+  platform?: any;
   status?: string;
-  type: string;
-  listType: string;
-  handleOnPress?: (event: GestureResponderEvent) => void;
-  handleOnLongPress?: (event: GestureResponderEvent) => void;
-  subTitleStatus: (item?: any) => any;
-  renderTypes: (item?: array) => any;
-  dateCustomFormat: (item?: any) => any;
+  type?: string;
+  listType?: string;
+  onPress?: (event: GestureResponderEvent) => void;
+  onLongPress?: (event: GestureResponderEvent) => void;
+  subtitleStatusFunc?: (item?: any) => any;
+  messageRenderer?: MessageRenderer;
+  dateCustomFormat?: (item?: any) => any;
 }
 
-export interface IChatListProps {}
+type MessageRenderer = (item?) => JSX.Element[];
+
+export interface IChatListProps {
+  //item?: IChatItemProps;
+  dataSource?: array;
+  message?: string;
+  containerStyle?: object;
+  messageContainerStyle?: object;
+  onItemPress?: func;
+  onItemLongPress?: func;
+  loading?: bool;
+  emptyChatMessageContainerStyle?: object;
+  activityIndicatorStyle?: object;
+  subtitleStatusFunc?: (item?: any) => any;
+  messageRenderer?: MessageRenderer;
+  dateCustomFormat?: (item?: any) => any;
+}
