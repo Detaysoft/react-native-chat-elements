@@ -1,9 +1,13 @@
 import React from 'react';
-import {GestureResponderEvent, StyleProp} from 'react-native';
+import {
+  GestureResponderEvent,
+  ImageSourcePropType,
+  StyleProp,
+} from 'react-native';
 
 export interface IAvatarProps {
   style?: Object;
-  source?: string;
+  source?: ImageSourcePropType;
 }
 
 export interface IChatButtonProps {
@@ -19,7 +23,7 @@ export interface IChatButtonProps {
 }
 
 export interface IPopupProps {
-  source?: string;
+  source?: ImageSourcePropType;
   imageStyle?: object;
   title?: string;
   titleStyle?: object;
@@ -44,7 +48,7 @@ export interface IChatItemProps {
   subtitleStatus?: any;
   badge: number;
   noImage: bool;
-  source?: string;
+  source?: ImageSourcePropType;
   date: any;
   status?: string;
   type: string;
@@ -55,3 +59,5 @@ export interface IChatItemProps {
   renderTypes: (item?: array) => any;
   dateCustomFormat: (item?: any) => any;
 }
+
+export interface IChatListProps {}

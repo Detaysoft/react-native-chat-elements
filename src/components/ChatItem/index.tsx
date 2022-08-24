@@ -26,7 +26,7 @@ const index = (props: IChatItemProps) => {
                   ]
                 : styles.userImageArea
             }>
-            <Image style={styles.userImage} source={{uri: props.source}} />
+            <Image source={props.source} style={styles.userImage} />
           </View>
         )}
       </View>

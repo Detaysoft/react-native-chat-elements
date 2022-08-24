@@ -7,10 +7,7 @@ const Avatar: FC<IAvatarProps> = (props: IAvatarProps) => {
   return (
     <View>
       {props.source ? (
-        <Image
-          style={[styles.avatar, props.style]}
-          source={{uri: props.source}}
-        />
+        <Image style={[styles.avatar, props.style]} source={props.source} />
       ) : (
         <View>
           <Image

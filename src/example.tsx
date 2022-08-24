@@ -6,10 +6,11 @@ import {
   Popup,
   CustomActionSheet,
   ChatItem,
+  ChatList,
 } from './components';
 
 const components = {
-  avatar: <Avatar source="../assets/download.png" />,
+  avatar: <Avatar source={require('../assets/download.png')} />,
   chatButton: (
     <ChatButton
       // title="deneme"
@@ -30,7 +31,7 @@ const components = {
   ),
   popup: (
     <Popup
-      source="../assets/calendar.jpg"
+      source={require('../assets/calendar.jpg')}
       title={'title'}
       text={
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua'
@@ -74,7 +75,7 @@ const components = {
       title="bensu"
       listType="chatList"
       noImage={false}
-      source={'../assets/calendar.jpg'}
+      source={require('../assets/calendar.jpg')}
       type={'single'}
       renderTypes={() => [
         'Apple',
@@ -90,6 +91,7 @@ const components = {
       handleOnLongPress={() => console.log('handle on long press')}
     />
   ),
+  chatList: <ChatList />,
 };
 
 export default components;

@@ -32,7 +32,7 @@ const Popup: FC<IPopupProps> = (props: IPopupProps) => {
             <View style={styles.modalView}>
               {props.source && (
                 <Image
-                  source={{uri: props.source}}
+                  source={props.source}
                   style={[styles.image, props.imageStyle]}
                 />
               )}
