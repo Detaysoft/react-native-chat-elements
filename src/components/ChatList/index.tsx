@@ -39,7 +39,7 @@ const ChatList: FC<IChatListProps> = (props: IChatListProps) => {
               styles.emptyChatMessage,
               props.emptyChatMessageContainerStyle,
             ]}>
-            {'Konuşma listeniz boş.'}
+            {props.emptyChatText}
           </Text>
         )}
       </View>

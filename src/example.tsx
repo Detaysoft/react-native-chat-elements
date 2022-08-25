@@ -7,6 +7,7 @@ import {
   CustomActionSheet,
   ChatListItem,
   ChatList,
+  AudioMessage,
 } from './components';
 
 const components = {
@@ -78,16 +79,17 @@ const components = {
       avatar={require('../assets/calendar.jpg')}
       type={'single'}
       messageRenderer={() => [
-        <Text>'Apple', 'Banana', 'cancel', 'Apple', 'Banana', 'cancel',</Text>,
+        <Text>Apple Banana cancel Apple Banana cancel</Text>,
       ]}
       dateCustomFormat={() => 'right now'}
-      subtitleStatusFunc={() => <Text>'✓✓'</Text>}
+      subtitleStatusFunc={() => <Text>✓</Text>}
       onPress={() => console.log('handle on press')}
       onLongPress={() => console.log('handle on long press')}
     />
   ),
   chatList: (
     <ChatList
+      emptyChatText="Konuşma listeniz boş."
       messageRenderer={() => [
         <Text numberOfLines={1} ellipsizeMode="tail">
           apple banana cancel apple banana cancel apple banana cancel
@@ -134,46 +136,23 @@ const components = {
           status: '#fff',
           type: 'single',
         },
-        {
-          date: Object,
-          id: '459',
-          inUnseen: 5,
-          lastMessage:
-            'git remote add origin https://.....git git push -u origin --all git push -u origin --tags',
-          lastMessageStatus: undefined,
-          name: 'Emre Güdür',
-          photo: require('../assets/download.png'),
-          platform: null,
-          status: '#fff',
-          type: 'single',
-        },
-        {
-          date: Object,
-          id: '460',
-          inUnseen: 5,
-          lastMessage:
-            'git remote add origin https://.....git git push -u origin --all git push -u origin --tags',
-          lastMessageStatus: undefined,
-          name: 'Emre Güdür',
-          photo: require('../assets/download.png'),
-          platform: null,
-          status: '#fff',
-          type: 'single',
-        },
-        {
-          date: Object,
-          id: '461',
-          inUnseen: 5,
-          lastMessage:
-            'git remote add origin https://.....git git push -u origin --all git push -u origin --tags',
-          lastMessageStatus: undefined,
-          name: 'Emre Güdür',
-          photo: require('../assets/download.png'),
-          platform: null,
-          status: '#fff',
-          type: 'single',
-        },
       ]}
+    />
+  ),
+  audioMessage: (
+    <AudioMessage
+      audioURL={'audio url'}
+      position={'right'}
+      duration={0}
+      started={false}
+      playIcon={<Text>pl</Text>}
+      playState={'paused'}
+      pauseIcon={<Text>pa</Text>}
+      slider={<Text>slider</Text>}
+      audioTime={<Text>15:03</Text>}
+      onStartPlay={() => console.log('onstart')}
+      onPausePlay={() => console.log('onpause')}
+      onResumePlayer={() => console.log('onresume')}
     />
   ),
 };

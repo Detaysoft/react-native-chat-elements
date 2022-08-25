@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {IChatListItemProps} from '../../type';
 import Avatar from '../Avatar';
 import styles from './chatListItem-css';
 
-const ChatListItem = (props: IChatListItemProps) => {
+const ChatListItem: FC<IChatListItemProps> = (props: IChatListItemProps) => {
   return (
     <TouchableOpacity
       onPress={props.onPress}
@@ -51,9 +51,7 @@ const ChatListItem = (props: IChatListItemProps) => {
               flexDirection: 'row',
               alignItems: 'center',
               width: '100%',
-              whiteSpace: 'nowrap',
               overflow: 'hidden',
-              textOverflow: 'ellipsis',
             }}>
             <View>{props.subtitleStatusFunc?.(props.subtitleStatus)}</View>
             {props.messageRenderer?.()}

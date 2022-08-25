@@ -65,7 +65,6 @@ export interface IChatListItemProps {
 type MessageRenderer = (item?) => JSX.Element[];
 
 export interface IChatListProps {
-  //item?: IChatItemProps;
   dataSource?: array;
   message?: string;
   containerStyle?: object;
@@ -73,9 +72,28 @@ export interface IChatListProps {
   onItemPress?: func;
   onItemLongPress?: func;
   loading?: bool;
+  emptyChatText: string;
   emptyChatMessageContainerStyle?: object;
   activityIndicatorStyle?: object;
   subtitleStatusFunc?: (item?: any) => any;
   messageRenderer?: MessageRenderer;
   dateCustomFormat?: (item?: any) => any;
+}
+
+/** Message Types */
+
+export interface IAudioMessageProps {
+  audioURL: string;
+  position: string;
+  duration: number;
+  ////////////////////////
+  started: boolean;
+  playIcon: JSX.Element;
+  playState: 'playing' | 'paused';
+  pauseIcon: JSX.Element;
+  slider: JSX.Element;
+  audioTime: JSX.Element;
+  onStartPlay: (event: GestureResponderEvent) => void;
+  onPausePlay: (event: GestureResponderEvent) => void;
+  onResumePlayer: (event: GestureResponderEvent) => void;
 }

@@ -4,5 +4,14 @@ import Popup from './Popup';
 import CustomActionSheet from './CustomActionSheet';
 import ChatListItem from './ChatListItem';
 import ChatList from './ChatList';
+import AudioMessage from './AudioMessage';
 
-export {Avatar, ChatButton, Popup, CustomActionSheet, ChatListItem, ChatList};
+export {
+  Avatar,
+  ChatButton,
+  Popup,
+  CustomActionSheet,
+  ChatListItem,
+  ChatList,
+  AudioMessage,
+};
