@@ -21,6 +21,8 @@ const App = () => {
         return components.chatList;
       case 'audioMessage':
         return components.audioMessage;
+      case 'fileMessage':
+        return components.fileMessage;
       default:
         break;
     }
@@ -54,6 +56,12 @@ const App = () => {
             <Button
               title="audioMessage"
               onPress={() => setshow('audioMessage')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="fileMessage"
+              onPress={() => setshow('fileMessage')}
             />
           </View>
         </View>

@@ -96,3 +96,26 @@ export interface IAudioMessageProps {
   onPausePlay: (event: GestureResponderEvent) => void;
   onResumePlayer: (event: GestureResponderEvent) => void;
 }
+
+export interface IFileMessageProps {
+  id: string;
+  position: string;
+  body: string;
+  progress: JSX.Element;
+  fileIcon: JSX.Element;
+  downloadIcon: JSX.Element;
+  errorIcon: JSX.Element;
+  data: {
+    size: any;
+    status: {
+      click: any;
+      loading: any;
+      error: any;
+    };
+  };
+  onPress: (event: GestureResponderEvent) => void;
+  fileSizeConversion: (item?) => string;
+  openFile: (event: GestureResponderEvent) => void;
+  downloadFile: (event: GestureResponderEvent) => void;
+  selectMessage: (event: GestureResponderEvent) => void;
+}

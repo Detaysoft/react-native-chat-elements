@@ -7,7 +7,7 @@ import {
   CustomActionSheet,
   ChatListItem,
   ChatList,
-  AudioMessage,
+  MessageTypes,
 } from './components';
 
 const components = {
@@ -141,7 +141,7 @@ const components = {
     />
   ),
   audioMessage: (
-    <AudioMessage
+    <MessageTypes.AudioMessage
       audioURL={'audio url'}
       position={'right'}
       duration={0}
@@ -154,6 +154,23 @@ const components = {
       onStartPlay={() => console.log('onstart')}
       onPausePlay={() => console.log('onpause')}
       onResumePlayer={() => console.log('onresume')}
+    />
+  ),
+  fileMessage: (
+    <MessageTypes.FileMessage
+      body="map"
+      data={{size: 10, status: {click: '', loading: '', error: ''}}}
+      downloadFile={() => console.log('download file')}
+      downloadIcon={<Text>D</Text>}
+      errorIcon={<Text>E</Text>}
+      fileIcon={<Text>F</Text>}
+      fileSizeConversion={() => '10'}
+      id="1"
+      onPress={() => console.log('on press')}
+      openFile={() => console.log('open file')}
+      position="right"
+      progress={<Text>progress</Text>}
+      selectMessage={() => console.log('select message')}
     />
   ),
 };

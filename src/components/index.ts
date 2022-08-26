@@ -4,7 +4,7 @@ import Popup from './Popup';
 import CustomActionSheet from './CustomActionSheet';
 import ChatListItem from './ChatListItem';
 import ChatList from './ChatList';
-import AudioMessage from './MessageTypes/AudioMessage';
+import MessageTypes from './MessageTypes';
 
 export {
   Avatar,
@@ -13,5 +13,5 @@ export {
   CustomActionSheet,
   ChatListItem,
   ChatList,
-  AudioMessage,
+  MessageTypes,
 };
