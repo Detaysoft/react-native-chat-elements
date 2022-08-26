@@ -75,6 +75,7 @@ const components = {
       date="now"
       title="bensu"
       listType="chatList"
+      subtitleStatus="✓"
       noImage={false}
       avatar={require('../assets/calendar.jpg')}
       type={'single'}
@@ -82,7 +83,7 @@ const components = {
         <Text>Apple Banana cancel Apple Banana cancel</Text>,
       ]}
       dateCustomFormat={() => 'right now'}
-      subtitleStatusFunc={() => <Text>✓</Text>}
+      subtitleStatusFunc={item => <Text>{item}</Text>}
       onPress={() => console.log('handle on press')}
       onLongPress={() => console.log('handle on long press')}
     />

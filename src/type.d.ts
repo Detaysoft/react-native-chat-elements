@@ -86,7 +86,6 @@ export interface IAudioMessageProps {
   audioURL: string;
   position: string;
   duration: number;
-  ////////////////////////
   started: boolean;
   playIcon: JSX.Element;
   playState: 'playing' | 'paused';
