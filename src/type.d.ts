@@ -128,3 +128,23 @@ export interface ILocationMessageProps {
   locationURL: (item?) => string;
   selectMessage: (event: GestureResponderEvent) => void;
 }
+
+export interface IPhotoMessageProps {
+  id: string;
+  data: {
+    status: {
+      download: any;
+      click: any;
+      error: any;
+      loading: any;
+    };
+    uri: any;
+  };
+  style?: object;
+  downloadIcon: JSX.Element;
+  errorIcon: JSX.Element;
+  progress: JSX.Element;
+  selectMessage: (event: GestureResponderEvent) => void;
+  downloadFile: (event: any) => void;
+  openMediaViewer: (item?) => any;
+}

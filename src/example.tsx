@@ -182,6 +182,21 @@ const components = {
       selectMessage={() => console.log('select message')}
     />
   ),
+  photoMessage: (
+    <MessageTypes.PhotoMessage
+      data={{
+        status: {download: '', click: '', error: '', loading: ''},
+        uri: 'https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?',
+      }}
+      downloadFile={() => console.log('download file')}
+      downloadIcon={<Text>D</Text>}
+      errorIcon={<Text>E</Text>}
+      id="10"
+      openMediaViewer={() => console.log('open media viewer')}
+      progress={<Text>progress</Text>}
+      selectMessage={() => console.log('select message')}
+    />
+  ),
 };
 
 export default components;

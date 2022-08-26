@@ -25,6 +25,8 @@ const App = () => {
         return components.fileMessage;
       case 'locationMessage':
         return components.locationMessage;
+      case 'photoMessage':
+        return components.photoMessage;
       default:
         break;
     }
@@ -70,6 +72,12 @@ const App = () => {
             <Button
               title="locationMessage"
               onPress={() => setshow('locationMessage')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="photoMessage"
+              onPress={() => setshow('photoMessage')}
             />
           </View>
         </View>
