@@ -173,6 +173,15 @@ const components = {
       selectMessage={() => console.log('select message')}
     />
   ),
+  locationMessage: (
+    <MessageTypes.LocationMessage
+      locationURL={() =>
+        'https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?'
+      }
+      onPress={() => console.log('on press')}
+      selectMessage={() => console.log('select message')}
+    />
+  ),
 };
 
 export default components;

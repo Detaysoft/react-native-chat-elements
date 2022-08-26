@@ -13,6 +13,7 @@ const FileMessage: FC<IFileMessageProps> = (props: IFileMessageProps) => {
         props.position === 'right'
           ? {backgroundColor: '#5ba7c5'}
           : {backgroundColor: '#fff'},
+        props.style,
       ]}>
       <View
         style={[

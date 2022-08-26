@@ -113,9 +113,18 @@ export interface IFileMessageProps {
       error: any;
     };
   };
+  style?: object;
   onPress: (event: GestureResponderEvent) => void;
   fileSizeConversion: (item?) => string;
   openFile: (event: GestureResponderEvent) => void;
   downloadFile: (event: GestureResponderEvent) => void;
+  selectMessage: (event: GestureResponderEvent) => void;
+}
+
+export interface ILocationMessageProps {
+  imageStyle?: object;
+  style?: object;
+  onPress: (event: GestureResponderEvent) => void;
+  locationURL: (item?) => string;
   selectMessage: (event: GestureResponderEvent) => void;
 }

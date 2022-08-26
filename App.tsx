@@ -23,6 +23,8 @@ const App = () => {
         return components.audioMessage;
       case 'fileMessage':
         return components.fileMessage;
+      case 'locationMessage':
+        return components.locationMessage;
       default:
         break;
     }
@@ -62,6 +64,12 @@ const App = () => {
             <Button
               title="fileMessage"
               onPress={() => setshow('fileMessage')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="locationMessage"
+              onPress={() => setshow('locationMessage')}
             />
           </View>
         </View>
