@@ -102,11 +102,12 @@ export interface IFileMessageProps {
   downloadIcon: JSX.Element;
   errorIcon: JSX.Element;
   data: {
-    size: any;
+    size: number;
     status: {
-      click: any;
-      loading: any;
-      error: any;
+      click: boolean;
+      loading: boolean;
+      error: boolean;
+      download: boolean;
     };
   };
   style?: object;
@@ -129,12 +130,12 @@ export interface IPhotoMessageProps {
   id: string;
   data: {
     status: {
-      download: any;
-      click: any;
-      error: any;
-      loading: any;
+      download: boolean;
+      click: boolean;
+      error: boolean;
+      loading: boolean;
     };
-    uri: any;
+    uri: string;
   };
   style?: object;
   downloadIcon: JSX.Element;
@@ -151,7 +152,7 @@ export interface IReplyMessageProps {
   photoURL?: ImageSourcePropType;
   closeButton: bool;
   closeButtonIcon: JSX.Element;
-  message?: (item?) => string;
+  message?: (item?) => string; //string
   selectMessage: (item?) => void;
 }
 
@@ -160,6 +161,7 @@ export interface ISystemMessageProps {
 }
 
 export interface ITextMessageProps {
+  body: string;
   messageBody: (item?) => JSX.Element;
   style?: object;
 }

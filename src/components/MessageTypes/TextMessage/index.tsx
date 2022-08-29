@@ -14,7 +14,7 @@ const TextMessage: FC<ITextMessageProps> = (props: ITextMessageProps) => {
         },
         props.style,
       ]}>
-      {props.messageBody?.()}
+      {props.body && props.messageBody?.()}
       <Text>{'\xa0'.repeat(Platform.OS === 'ios' ? 15 : 20)}</Text>
     </View>
   );

@@ -31,18 +31,7 @@ const AudioMessage: FC<IAudioMessageProps> = (props: IAudioMessageProps) => {
           </TouchableOpacity>
         )}
       </View>
-      <View style={{marginRight: 5}}>
-        {/* <Slider
-          disabled={true}
-          value={parseInt(state.playSeconds)}
-          maximumValue={parseInt(state.duration)}
-          maximumTrackTintColor={props.position === 'right' ? '#efefef' : '#555'}
-          minimumTrackTintColor={props.position === 'right' ? '#efefef' : '#555'}
-          thumbTintColor='black'
-          style={{ minWidth: 150 }}
-        /> */}
-        {props.slider}
-      </View>
+      <View style={{marginRight: 5}}>{props.slider}</View>
       <View>{props.audioTime}</View>
     </View>
   );
