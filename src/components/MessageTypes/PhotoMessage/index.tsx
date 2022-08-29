@@ -6,29 +6,15 @@ import styles from './photoMessage-css';
 const PhotoMessage: FC<IPhotoMessageProps> = (props: IPhotoMessageProps) => {
   return (
     <TouchableOpacity
-      style={{
-        width: 200,
-      }}
       onLongPress={props.selectMessage}
       onPress={() => {
         if (props.data.status.download) {
           props.openMediaViewer();
         }
       }}>
-      <View
-        style={[
-          {
-            flex: 1,
-            height: 200,
-          },
-        ]}>
+      <View style={props.style}>
         <Image
-          style={[
-            styles.chatMessageImage,
-            {
-              height: 200,
-            },
-          ]}
+          style={[styles.chatMessageImage]}
           source={{
             uri: props.data.uri || '',
           }}

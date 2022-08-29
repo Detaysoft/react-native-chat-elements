@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 5,
     resizeMode: 'contain',
+    height: 200,
+    width: 200,
   },
   imageDownloadButton: {
     position: 'absolute',
