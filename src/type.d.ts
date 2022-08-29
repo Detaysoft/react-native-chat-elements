@@ -148,3 +148,13 @@ export interface IPhotoMessageProps {
   downloadFile: (event: any) => void;
   openMediaViewer: (item?) => any;
 }
+
+export interface IReplyMessageProps {
+  titleColor?: string;
+  title?: string;
+  photoURL?: ImageSourcePropType;
+  closeButton: bool;
+  closeButtonIcon: JSX.Element;
+  message?: (item?) => string;
+  selectMessage: (event: GestureResponderEvent) => void;
+}

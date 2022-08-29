@@ -197,6 +197,17 @@ const components = {
       selectMessage={() => console.log('select message')}
     />
   ),
+  replyMessage: (
+    <MessageTypes.ReplyMessage
+      closeButton={true}
+      closeButtonIcon={<Text>CB</Text>}
+      photoURL={require('../assets/download.png')}
+      selectMessage={() => console.log('select message')}
+      message={() => 'message'}
+      title="title"
+      titleColor="red"
+    />
+  ),
 };
 
 export default components;
