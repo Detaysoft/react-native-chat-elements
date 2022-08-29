@@ -208,6 +208,7 @@ const components = {
       titleColor="red"
     />
   ),
+  systemMessage: <MessageTypes.SystemMessage date={() => '29 ağu pazartesi'} />,
 };
 
 export default components;

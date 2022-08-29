@@ -29,6 +29,8 @@ const App = () => {
         return components.photoMessage;
       case 'replyMessage':
         return components.replyMessage;
+      case 'systemMessage':
+        return components.systemMessage;
       default:
         break;
     }
@@ -86,6 +88,12 @@ const App = () => {
             <Button
               title="replyMessage"
               onPress={() => setshow('replyMessage')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="systemMessage"
+              onPress={() => setshow('systemMessage')}
             />
           </View>
         </View>

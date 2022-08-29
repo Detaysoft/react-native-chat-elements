@@ -158,3 +158,7 @@ export interface IReplyMessageProps {
   message?: (item?) => string;
   selectMessage: (event: GestureResponderEvent) => void;
 }
+
+export interface ISystemMessageProps {
+  date?: (item?) => string;
+}
