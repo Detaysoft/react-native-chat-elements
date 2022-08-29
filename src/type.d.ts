@@ -162,3 +162,8 @@ export interface IReplyMessageProps {
 export interface ISystemMessageProps {
   date?: (item?) => string;
 }
+
+export interface ITextMessageProps {
+  messageBody: (item?) => JSX.Element;
+  style?: object;
+}

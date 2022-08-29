@@ -209,6 +209,9 @@ const components = {
     />
   ),
   systemMessage: <MessageTypes.SystemMessage date={() => '29 ağu pazartesi'} />,
+  textMessage: (
+    <MessageTypes.TextMessage messageBody={() => <Text>wkndjk</Text>} />
+  ),
 };
 
 export default components;
