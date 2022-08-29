@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  GestureResponderEvent,
-  ImageSourcePropType,
-  StyleProp,
-} from 'react-native';
+import {ImageSourcePropType, StyleProp} from 'react-native';
 
 export interface IAvatarProps {
   style?: Object;
@@ -19,7 +15,7 @@ export interface IChatButtonProps {
   iconFamily?: StyleProp;
   contentStyle?: object;
   title?: string;
-  onPress?: (event: GestureResponderEvent) => void;
+  onPress?: (item?) => void;
 }
 
 export interface IPopupProps {
@@ -55,8 +51,8 @@ export interface IChatListItemProps {
   status?: string;
   type?: string;
   listType?: string;
-  onPress?: (event: GestureResponderEvent) => void;
-  onLongPress?: (event: GestureResponderEvent) => void;
+  onPress?: (item?) => void;
+  onLongPress?: (item?) => void;
   subtitleStatusFunc?: (item?: any) => any;
   messageRenderer?: MessageRenderer;
   dateCustomFormat?: (item?: any) => any;
@@ -92,9 +88,9 @@ export interface IAudioMessageProps {
   pauseIcon: JSX.Element;
   slider: JSX.Element;
   audioTime: JSX.Element;
-  onStartPlay: (event: GestureResponderEvent) => void;
-  onPausePlay: (event: GestureResponderEvent) => void;
-  onResumePlayer: (event: GestureResponderEvent) => void;
+  onStartPlay: (item?) => void;
+  onPausePlay: (item?) => void;
+  onResumePlayer: (item?) => void;
 }
 
 export interface IFileMessageProps {
@@ -114,19 +110,19 @@ export interface IFileMessageProps {
     };
   };
   style?: object;
-  onPress: (event: GestureResponderEvent) => void;
+  onPress: (item?) => void;
   fileSizeConversion: (item?) => string;
-  openFile: (event: GestureResponderEvent) => void;
-  downloadFile: (event: GestureResponderEvent) => void;
-  selectMessage: (event: GestureResponderEvent) => void;
+  openFile: (item?) => void;
+  downloadFile: (item?) => void;
+  selectMessage: (item?) => void;
 }
 
 export interface ILocationMessageProps {
   imageStyle?: object;
   style?: object;
-  onPress: (event: GestureResponderEvent) => void;
+  onPress: (item?) => void;
   locationURL: (item?) => string;
-  selectMessage: (event: GestureResponderEvent) => void;
+  selectMessage: (item?) => void;
 }
 
 export interface IPhotoMessageProps {
@@ -144,8 +140,8 @@ export interface IPhotoMessageProps {
   downloadIcon: JSX.Element;
   errorIcon: JSX.Element;
   progress: JSX.Element;
-  selectMessage: (event: GestureResponderEvent) => void;
-  downloadFile: (event: any) => void;
+  selectMessage: (item?) => void;
+  downloadFile: (item: any) => void;
   openMediaViewer: (item?) => any;
 }
 
@@ -156,7 +152,7 @@ export interface IReplyMessageProps {
   closeButton: bool;
   closeButtonIcon: JSX.Element;
   message?: (item?) => string;
-  selectMessage: (event: GestureResponderEvent) => void;
+  selectMessage: (item?) => void;
 }
 
 export interface ISystemMessageProps {
@@ -166,4 +162,26 @@ export interface ISystemMessageProps {
 export interface ITextMessageProps {
   messageBody: (item?) => JSX.Element;
   style?: object;
+}
+
+export interface IVideoMessageProps {
+  message: {
+    data: {
+      thumbnailURL: string;
+      status: {
+        click: boolean;
+        loading: boolean;
+        error: boolean;
+        download: boolean;
+      };
+    };
+    body: string;
+  };
+  videoPlayIcon: JSX.Element;
+  downloadIcon: JSX.Element;
+  errorIcon: JSX.Element;
+  progress: JSX.Element;
+  onPress: (item?) => void;
+  onPressFile: (item?) => void;
+  selectMessage: (item?) => void;
 }

@@ -5,6 +5,7 @@ import PhotoMessage from './PhotoMessage';
 import ReplyMessage from './ReplyMessage';
 import SystemMessage from './SystemMessage';
 import TextMessage from './TextMessage';
+import VideoMessage from './VideoMessage';
 
 export default {
   AudioMessage,
@@ -14,4 +15,5 @@ export default {
   ReplyMessage,
   SystemMessage,
   TextMessage,
+  VideoMessage,
 };

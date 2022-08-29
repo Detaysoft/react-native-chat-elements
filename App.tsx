@@ -33,6 +33,8 @@ const App = () => {
         return components.systemMessage;
       case 'textMessage':
         return components.textMessage;
+      case 'videoMessage':
+        return components.videoMessage;
       default:
         break;
     }
@@ -102,6 +104,12 @@ const App = () => {
             <Button
               title="textMessage"
               onPress={() => setshow('textMessage')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="videoMessage"
+              onPress={() => setshow('videoMessage')}
             />
           </View>
         </View>

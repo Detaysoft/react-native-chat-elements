@@ -212,6 +212,29 @@ const components = {
   textMessage: (
     <MessageTypes.TextMessage messageBody={() => <Text>wkndjk</Text>} />
   ),
+  videoMessage: (
+    <MessageTypes.VideoMessage
+      onPress={() => console.log('download file')}
+      downloadIcon={<Text>DI</Text>}
+      errorIcon={<Text>EI</Text>}
+      message={{
+        data: {
+          thumbnailURL: require('../assets/kedi.mp4'),
+          status: {
+            click: false,
+            loading: false,
+            error: false,
+            download: false,
+          },
+        },
+        body: 'kedi.mp4',
+      }}
+      onPressFile={() => console.log('on press file')}
+      progress={<Text>P</Text>}
+      selectMessage={() => console.log('select message')}
+      videoPlayIcon={<Text>VPI</Text>}
+    />
+  ),
 };
 
 export default components;
