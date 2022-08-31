@@ -189,6 +189,14 @@ const components = {
       selectMessage={() => console.log('select message')}
     />
   ),
+  meetingLinkMessage: (
+    <MessageTypes.MeetingLinkMessage
+      type="meetingLink"
+      icon={<Text>icon</Text>}
+      onPress={() => console.log('onpress')}
+      title="kldnfve"
+    />
+  ),
   photoMessage: (
     <MessageTypes.PhotoMessage
       type="photo"

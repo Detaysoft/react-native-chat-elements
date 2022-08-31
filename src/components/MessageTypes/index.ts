@@ -6,6 +6,8 @@ import ReplyMessage from './ReplyMessage';
 import SystemMessage from './SystemMessage';
 import TextMessage from './TextMessage';
 import VideoMessage from './VideoMessage';
+import MeetingMessage from './MeetingMessage';
+import MeetingLinkMessage from './MeetingLinkMessage';
 
 export default {
   AudioMessage,
@@ -16,4 +18,6 @@ export default {
   SystemMessage,
   TextMessage,
   VideoMessage,
+  MeetingMessage,
+  MeetingLinkMessage,
 };

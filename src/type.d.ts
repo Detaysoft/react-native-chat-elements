@@ -150,6 +150,12 @@ export interface IMeetingMessageProps {
   cancelSelect: func;
   openImageViewer: func;
 }
+export interface IMeetingLinkMessageProps {
+  type: 'meetingLink';
+  title: string;
+  icon: JSX.Element;
+  onPress: (item?) => void;
+}
 export interface IPhotoMessageProps {
   type: 'photo';
   id: string;
@@ -224,7 +230,9 @@ export type MessageType =
   | ({type: 'audio'} & IAudioMessageProps)
   | ({type: 'file'} & IFileMessageProps)
   | ({type: 'text'} & ITextMessageProps)
-  | ({type: 'system'} & ISystemMessageProps);
+  | ({type: 'system'} & ISystemMessageProps)
+  | ({type: 'meeting'} & IMeetingMessageProps)
+  | ({type: 'meetingLink'} & IMeetingLinkMessageProps);
 
 export interface IMessageViewProps {
   downloadFile?: func;

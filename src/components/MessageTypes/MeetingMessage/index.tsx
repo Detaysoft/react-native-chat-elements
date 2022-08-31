@@ -49,10 +49,6 @@ const MeetingMessage: FC<IMeetingMessageProps> = (
                         <View style={styles.mitemAvatar}>
                           {x.avatar ? (
                             <Image
-                              onError={(e: any) => {
-                                e.source =
-                                  require('../../assets/images').userPNG;
-                              }}
                               style={styles.images}
                               source={{
                                 uri: x.src,
