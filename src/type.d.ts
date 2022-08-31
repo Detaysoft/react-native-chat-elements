@@ -129,6 +129,27 @@ export interface ILocationMessageProps {
   selectMessage: (item?) => void;
 }
 
+export interface IMeetingMessageProps {
+  type: 'meeting';
+  data: array;
+  title: string;
+  dateText: string;
+  subject: string;
+  state: {
+    toggle: boolean;
+    participants: array;
+  };
+  icon: JSX.Element;
+  toggleElement: JSX.Element;
+  onPressToggle: func;
+  downloadFile: func;
+  openFile: func;
+  message: any;
+  reSendMessage: func;
+  selectMessage: func;
+  cancelSelect: func;
+  openImageViewer: func;
+}
 export interface IPhotoMessageProps {
   type: 'photo';
   id: string;
