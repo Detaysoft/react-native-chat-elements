@@ -159,7 +159,10 @@ const components = {
   fileMessage: (
     <MessageTypes.FileMessage
       body="map"
-      data={{size: 10, status: {click: '', loading: '', error: ''}}}
+      data={{
+        size: 10,
+        status: {click: false, loading: false, error: false, download: false},
+      }}
       downloadFile={() => console.log('download file')}
       downloadIcon={<Text>D</Text>}
       errorIcon={<Text>E</Text>}
@@ -185,7 +188,7 @@ const components = {
   photoMessage: (
     <MessageTypes.PhotoMessage
       data={{
-        status: {download: '', click: '', error: '', loading: ''},
+        status: {download: false, click: false, error: false, loading: false},
         uri: 'https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?',
       }}
       downloadFile={() => console.log('download file')}
@@ -210,7 +213,10 @@ const components = {
   ),
   systemMessage: <MessageTypes.SystemMessage date={() => '29 ağu pazartesi'} />,
   textMessage: (
-    <MessageTypes.TextMessage messageBody={() => <Text>wkndjk</Text>} />
+    <MessageTypes.TextMessage
+      messageBody={() => <Text>wkndjk</Text>}
+      body="kwefjkwn"
+    />
   ),
   videoMessage: (
     <MessageTypes.VideoMessage
