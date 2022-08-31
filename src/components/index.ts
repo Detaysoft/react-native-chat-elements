@@ -5,6 +5,7 @@ import CustomActionSheet from './CustomActionSheet';
 import ChatListItem from './ChatListItem';
 import ChatList from './ChatList';
 import MessageTypes from './MessageTypes';
+import MessageView from './MessageView';
 
 export {
   Avatar,
@@ -14,4 +15,5 @@ export {
   ChatListItem,
   ChatList,
   MessageTypes,
+  MessageView,
 };

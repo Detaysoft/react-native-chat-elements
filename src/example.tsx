@@ -8,6 +8,7 @@ import {
   ChatListItem,
   ChatList,
   MessageTypes,
+  MessageView,
 } from './components';
 
 const components = {
@@ -142,6 +143,7 @@ const components = {
   ),
   audioMessage: (
     <MessageTypes.AudioMessage
+      type="audio"
       audioURL={'audio url'}
       position={'right'}
       duration={0}
@@ -158,6 +160,7 @@ const components = {
   ),
   fileMessage: (
     <MessageTypes.FileMessage
+      type="file"
       body="map"
       data={{
         size: 10,
@@ -178,6 +181,7 @@ const components = {
   ),
   locationMessage: (
     <MessageTypes.LocationMessage
+      type="location"
       locationURL={() =>
         'https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?'
       }
@@ -187,6 +191,7 @@ const components = {
   ),
   photoMessage: (
     <MessageTypes.PhotoMessage
+      type="photo"
       data={{
         status: {download: false, click: false, error: false, loading: false},
         uri: 'https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?',
@@ -202,6 +207,7 @@ const components = {
   ),
   replyMessage: (
     <MessageTypes.ReplyMessage
+      type="reply"
       closeButton={true}
       closeButtonIcon={<Text>CB</Text>}
       photoURL={require('../assets/download.png')}
@@ -211,15 +217,19 @@ const components = {
       titleColor="red"
     />
   ),
-  systemMessage: <MessageTypes.SystemMessage date={() => '29 ağu pazartesi'} />,
+  systemMessage: (
+    <MessageTypes.SystemMessage type="system" date={() => '29 ağu pazartesi'} />
+  ),
   textMessage: (
     <MessageTypes.TextMessage
+      type="text"
       messageBody={() => <Text>wkndjk</Text>}
       body="kwefjkwn"
     />
   ),
   videoMessage: (
     <MessageTypes.VideoMessage
+      type="video"
       onPress={() => console.log('download file')}
       downloadIcon={<Text>DI</Text>}
       errorIcon={<Text>EI</Text>}
@@ -241,6 +251,7 @@ const components = {
       videoPlayIcon={<Text>VPI</Text>}
     />
   ),
+  messageView: <MessageView />,
 };
 
 export default components;

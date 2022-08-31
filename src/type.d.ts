@@ -79,6 +79,7 @@ export interface IChatListProps {
 /** Message Types */
 
 export interface IAudioMessageProps {
+  type: 'audio';
   audioURL: string;
   position: string;
   duration: number;
@@ -94,6 +95,7 @@ export interface IAudioMessageProps {
 }
 
 export interface IFileMessageProps {
+  type: 'file';
   id: string;
   position: string;
   body: string;
@@ -119,6 +121,7 @@ export interface IFileMessageProps {
 }
 
 export interface ILocationMessageProps {
+  type: 'location';
   imageStyle?: object;
   style?: object;
   onPress: (item?) => void;
@@ -127,6 +130,7 @@ export interface ILocationMessageProps {
 }
 
 export interface IPhotoMessageProps {
+  type: 'photo';
   id: string;
   data: {
     status: {
@@ -147,6 +151,7 @@ export interface IPhotoMessageProps {
 }
 
 export interface IReplyMessageProps {
+  type: 'reply';
   titleColor?: string;
   title?: string;
   photoURL?: ImageSourcePropType;
@@ -157,16 +162,19 @@ export interface IReplyMessageProps {
 }
 
 export interface ISystemMessageProps {
+  type: 'system';
   date?: (item?) => string;
 }
 
 export interface ITextMessageProps {
+  type: 'text';
   body: string;
   messageBody: (item?) => JSX.Element;
   style?: object;
 }
 
 export interface IVideoMessageProps {
+  type: 'video';
   message: {
     data: {
       thumbnailURL: string;
@@ -186,4 +194,24 @@ export interface IVideoMessageProps {
   onPress: (item?) => void;
   onPressFile: (item?) => void;
   selectMessage: (item?) => void;
+}
+
+export type MessageType =
+  | ({type: 'location'} & ILocationMessageProps)
+  | ({type: 'photo'} & IPhotoMessageProps)
+  | ({type: 'video'} & IVideoMessageProps)
+  | ({type: 'audio'} & IAudioMessageProps)
+  | ({type: 'file'} & IFileMessageProps)
+  | ({type: 'text'} & ITextMessageProps)
+  | ({type: 'system'} & ISystemMessageProps);
+
+export interface IMessageViewProps {
+  downloadFile?: func;
+  openFile?: func;
+  message?: MessageType;
+  reSendMessage?: func;
+  selectMessage?: func;
+  cancelSelect?: func;
+  openMediaViewer?: func;
+  messageColor?: any;
 }
