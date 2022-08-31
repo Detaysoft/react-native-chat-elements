@@ -38,10 +38,10 @@ const MeetingMessage: FC<IMeetingMessageProps> = (
           }}>
           {props.toggleElement}
         </TouchableOpacity>
-        {props.state.toggle === true && (
+        {props.state?.toggle === true && (
           <View style={{flex: 1}}>
-            {props.data &&
-              props.data.map((x: any, i: any) => {
+            {props.dataSource &&
+              props.dataSource.map((x: any, i: any) => {
                 return (
                   <View key={i}>
                     {!x.event && (
@@ -55,32 +55,18 @@ const MeetingMessage: FC<IMeetingMessageProps> = (
                               }}
                             />
                           ) : (
-                            // <IconE
-                            //   name={'chat'}
-                            //   size={20}
-                            //   color={'#00000066'}
-                            // />
-                            <Text></Text>
+                            props.avatarIcon
                           )}
                         </View>
                         <View style={styles.mitemBody}>
                           <View style={styles.mitemBodyTop}>
                             <TouchableOpacity
-                              // onPress={() =>
-                              //   GLOBALS.promise.view.emit(
-                              //     'openMeetMessageChat',
-                              //     x.id,
-                              //   )
-                              // }
+                              onPress={() => props.onPressTitle}
                               style={styles.mitemBodyTopTitle}>
                               <Text style={{color: '#6264a7'}}>{x.title}</Text>
                             </TouchableOpacity>
                             <Text style={styles.mitemBodyTopTime}>
-                              {/* {x.dateString
-                                ? x.dateString
-                                : x.date &&
-                                  !isNaN(x.date) &&
-                                  dateCustomFormat('relative', x.date)} */}
+                              {props.date}
                             </Text>
                           </View>
                           <View>
@@ -100,18 +86,12 @@ const MeetingMessage: FC<IMeetingMessageProps> = (
                             styles.mitemBottomBody,
                             x.record && styles.mitemBodyRecord,
                           ]}>
-                          {/* <IconF name={'video'} size={20} color="#00000066" /> */}
+                          {props.recordIcon}
                         </View>
                         <View style={styles.mitemBodyBottomTop}>
                           <Text style={{fontSize: 13}}>{x.event.title}</Text>
                           <View style={styles.mitemBodyTopTime}>
-                            <Text style={{fontSize: 10}}>
-                              {/* {x.dateString
-                                ? x.dateString
-                                : x.date &&
-                                  !isNaN(x.date) &&
-                                  dateCustomFormat('relative', x.date)} */}
-                            </Text>
+                            <Text style={{fontSize: 10}}>{props.date}</Text>
                           </View>
                           <View style={styles.mitemAvatarContent}>
                             <View style={styles.mitemAvatars}>
@@ -133,7 +113,7 @@ const MeetingMessage: FC<IMeetingMessageProps> = (
                               <View style={styles.mtmgCallBody}>
                                 <TouchableOpacity
                                   onPress={e => {
-                                    //onMeetingVideoLinkClick(x, i, e);
+                                    props.onPressMeetingVideoLink?.(x, i, e);
                                   }}
                                   style={styles.mtmgCallAvatars}>
                                   <Image

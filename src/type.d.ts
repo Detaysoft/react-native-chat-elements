@@ -130,25 +130,30 @@ export interface ILocationMessageProps {
 }
 
 export interface IMeetingMessageProps {
-  type: 'meeting';
-  data: array;
-  title: string;
-  dateText: string;
-  subject: string;
-  state: {
-    toggle: boolean;
-    participants: array;
+  type?: 'meeting';
+  dataSource?: array;
+  title?: string;
+  dateText?: string;
+  subject?: string;
+  state?: {
+    toggle?: boolean;
+    participants?: array;
   };
-  icon: JSX.Element;
-  toggleElement: JSX.Element;
-  onPressToggle: func;
-  downloadFile: func;
-  openFile: func;
-  message: any;
-  reSendMessage: func;
-  selectMessage: func;
-  cancelSelect: func;
-  openImageViewer: func;
+  icon?: JSX.Element;
+  avatarIcon?: JSX.Element;
+  toggleElement?: JSX.Element;
+  recordIcon?: JSX.Element;
+  date?: string;
+  onPressMeetingVideoLink?: (item?, item2?, item3?) => any;
+  onPressTitle?: (item?) => any;
+  onPressToggle?: (item?) => any;
+  downloadFile?: (item?) => any;
+  openFile?: (item?) => any;
+  message?: MessageType;
+  reSendMessage?: (item?) => any;
+  selectMessage?: (item?) => any;
+  cancelSelect?: (item?) => any;
+  openImageViewer?: (item?) => any;
 }
 export interface IMeetingLinkMessageProps {
   type: 'meetingLink';

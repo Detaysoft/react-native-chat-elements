@@ -189,6 +189,36 @@ const components = {
       selectMessage={() => console.log('select message')}
     />
   ),
+  meetingMessage: (
+    <MessageTypes.MeetingMessage
+      avatarIcon={<Text>AI</Text>}
+      cancelSelect={() => console.log('cancel select')}
+      dataSource={[]}
+      date="date"
+      dateText="date"
+      downloadFile={() => console.log('download file')}
+      icon={<Text>I</Text>}
+      message={{
+        type: 'meetingLink',
+        icon: <Text>icon</Text>,
+        onPress: () => console.log('onpress'),
+        title: 'jfvnbjksf',
+      }}
+      onPressMeetingVideoLink={() => console.log('onPressMeetingVideoLink')}
+      onPressTitle={() => console.log('onPressMeetingVideoLink')}
+      onPressToggle={() => console.log('onPressMeetingVideoLink')}
+      openFile={() => console.log('onPressMeetingVideoLink')}
+      openImageViewer={() => console.log('onPressMeetingVideoLink')}
+      reSendMessage={() => console.log('onPressMeetingVideoLink')}
+      selectMessage={() => console.log('onPressMeetingVideoLink')}
+      type="meeting"
+      recordIcon={<Text>RI</Text>}
+      subject="subject"
+      title="title"
+      toggleElement={<Text>TE</Text>}
+      state={{participants: '', toggle: false}}
+    />
+  ),
   meetingLinkMessage: (
     <MessageTypes.MeetingLinkMessage
       type="meetingLink"
