@@ -24,7 +24,7 @@ const FileMessage: FC<IFileMessageProps> = (props: IFileMessageProps) => {
         ]}>
         <View style={styles.fileIconView}>
           {props.fileIcon}
-          {!!props.data.size && (
+          {!!props.data?.size && (
             <Text
               numberOfLines={1}
               style={[
@@ -33,7 +33,7 @@ const FileMessage: FC<IFileMessageProps> = (props: IFileMessageProps) => {
                   ? {color: '#e0e0e0'}
                   : {color: '#aaa'},
               ]}>
-              {props.fileSizeConversion()}
+              {props.fileSizeConversion?.()}
             </Text>
           )}
         </View>
@@ -48,9 +48,9 @@ const FileMessage: FC<IFileMessageProps> = (props: IFileMessageProps) => {
           ]}>
           {props.body}
         </Text>
-        {!props.data.status.click && props.downloadIcon}
-        {props.data.status.error && props.errorIcon}
-        {props.data.status.loading &&
+        {!props.data?.status?.click && props.downloadIcon}
+        {props.data?.status?.error && props.errorIcon}
+        {props.data?.status?.loading &&
         typeof props.data.status.loading === 'number' &&
         props.data.status.loading !== 0 &&
         !props.data.status.error ? (

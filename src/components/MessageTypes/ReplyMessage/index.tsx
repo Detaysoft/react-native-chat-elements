@@ -1,13 +1,12 @@
 import React, {FC} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {IReplyMessageProps} from '../../../type';
-import Avatar from '../../Avatar';
 import styles from './replyMessage-css';
 
 const ReplyMessage: FC<IReplyMessageProps> = (props: IReplyMessageProps) => {
   return (
     <TouchableOpacity
-      onLongPress={props.selectMessage}
+      onLongPress={props.onPressSelectMessage}
       style={{
         width: '100%',
         marginBottom: 5,

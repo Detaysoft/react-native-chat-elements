@@ -14,7 +14,7 @@ const LocationMessage: FC<ILocationMessageProps> = (
       <Image
         style={[styles.chatMessageImage, props.imageStyle]}
         source={{
-          uri: props.locationURL(),
+          uri: props.locationURL?.(),
         }}
       />
     </TouchableOpacity>

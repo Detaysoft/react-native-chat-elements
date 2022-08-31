@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {IChatListItemProps} from '../../type';
 import Avatar from '../Avatar';
 import styles from './chatListItem-css';

@@ -249,7 +249,7 @@ const components = {
       closeButton={true}
       closeButtonIcon={<Text>CB</Text>}
       photoURL={require('../assets/download.png')}
-      selectMessage={() => console.log('select message')}
+      onPressSelectMessage={() => console.log('select message')}
       message={() => 'message'}
       title="title"
       titleColor="red"

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ActivityIndicator, Text, TouchableOpacity, View} from 'react-native';
+import {ActivityIndicator, TouchableOpacity, View} from 'react-native';
 import {IAudioMessageProps} from '../../../type';
 
 const AudioMessage: FC<IAudioMessageProps> = (props: IAudioMessageProps) => {

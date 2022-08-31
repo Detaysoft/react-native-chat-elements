@@ -11,8 +11,8 @@ const VideoMessage: FC<IVideoMessageProps> = (props: IVideoMessageProps) => {
         width: 200,
       }}
       onPress={() => {
-        if (props.message.data.status.download) {
-          props.onPressFile();
+        if (props.message?.data?.status?.download) {
+          props.onPressFile?.();
         }
       }}>
       <View
@@ -32,32 +32,32 @@ const VideoMessage: FC<IVideoMessageProps> = (props: IVideoMessageProps) => {
             },
           ]}
           source={
-            props.message.data.thumbnailURL
-              ? props.message.data.thumbnailURL
+            props.message?.data?.thumbnailURL
+              ? props.message.data?.thumbnailURL
               : require('../../../../assets/download.png')
           }
         />
         {
           <Text ellipsizeMode="tail" numberOfLines={1} style={{width: 150}}>
-            {props.message.body}
+            {props.message?.body}
           </Text>
         }
-        {!props.message.data.status.click ? (
+        {!props.message?.data?.status?.click ? (
           <TouchableOpacity
             style={styles.imageDownloadButton}
-            onPress={() => props.onPressFile(props.message)}>
+            onPress={() => props.onPressFile?.(props.message)}>
             <View style={styles.imgDownloadBtn}>{props.downloadIcon}</View>
           </TouchableOpacity>
         ) : null}
-        {props.message.data.status.error ? (
+        {props.message?.data?.status?.error ? (
           <TouchableOpacity style={styles.imageDownloadButton}>
             {props.errorIcon}
           </TouchableOpacity>
         ) : null}
-        {props.message.data.status.loading &&
-        typeof props.message.data.status.loading === 'number' &&
-        props.message.data.status.loading !== 0 &&
-        !props.message.data.status.error ? (
+        {props.message?.data?.status?.loading &&
+        typeof props.message.data?.status.loading === 'number' &&
+        props.message.data?.status.loading !== 0 &&
+        !props.message.data?.status.error ? (
           <View style={styles.imageDownloadButton}>{props.progress}</View>
         ) : null}
       </View>
