@@ -3,8 +3,8 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   // ListItem Style Templates
   listItemContainer: {
-    minHeight: 70,
-    flex: 1,
+    //  minHeight: 70,
+    //  flex: 1,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',

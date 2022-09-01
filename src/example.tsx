@@ -289,7 +289,62 @@ const components = {
       videoPlayIcon={<Text>VPI</Text>}
     />
   ),
-  messageView: <MessageView />,
+  messageView: (
+    <>
+      <MessageView
+        type="meetingLink"
+        icon={<Text>icon</Text>}
+        onPress={() => console.log('onpress')}
+        title="kldnfve"
+        sendStatusIcon={<Text>✓</Text>}
+        date="right now"
+        position="right"
+        chatType="singlechat"
+        messageColor={{
+          backgroundColor: '#5ba7c5',
+          borderBottomLeftRadius: 10,
+          borderBottomRightRadius: 10,
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 0,
+          color: '#fff',
+          marginBottom: 3,
+          marginLeft: '10%',
+          marginTop: 3,
+          paddingBottom: 8,
+          paddingLeft: 9,
+          paddingRight: 9,
+          paddingTop: 6,
+          retractedColor: '#fff',
+        }}
+      />
+      <MessageView
+        type="meetingLink"
+        icon={<Text>icon</Text>}
+        onPress={() => console.log('onpress')}
+        title="kldnfve"
+        sendStatusIcon={<Text>✓</Text>}
+        date="right now"
+        position="right"
+        chatType="singlechat"
+        messageColor={{
+          backgroundColor: '#5ba7c5',
+          borderBottomLeftRadius: 10,
+          borderBottomRightRadius: 10,
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 0,
+          color: '#fff',
+          marginBottom: 3,
+          marginLeft: '10%',
+          marginTop: 3,
+          paddingBottom: 8,
+          paddingLeft: 9,
+          paddingRight: 9,
+          paddingTop: 6,
+          retractedColor: '#fff',
+        }}
+      />
+    </>
+  ),
 };
 
 export default components;

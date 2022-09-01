@@ -84,6 +84,7 @@ interface IMessage {
   reply?: IReplyMessageProps;
   sended?: string;
   date?: any;
+  data?: any;
   selected?: boolean;
   messageColor?: any;
   retracted?: boolean;
@@ -91,8 +92,10 @@ interface IMessage {
   id?: string;
   notch?: true;
   ownerId?: string;
+  receiveId?;
   seen?: string;
   seenUsers?: Array;
+  messageTextColor?: object;
 }
 export interface IAudioMessageProps extends IMessage {
   audioURL?: string;
@@ -167,7 +170,6 @@ export interface IMeetingMessageProps extends IMessage {
   avatarIcon?: JSX.Element;
   toggleElement?: JSX.Element;
   recordIcon?: JSX.Element;
-  date?: string;
   onPressMeetingVideoLink?: (item?, item2?, item3?) => any;
   onPressTitle?: (item?) => any;
   onPressToggle?: (item?) => any;

@@ -12,8 +12,8 @@ const MessageView: FC<MessageViewType> = (props: MessageViewType) => {
         props.selected === true && styles.selectedMessageItem,
       ]}>
       {props?.type === 'meeting' &&
-      (props.dataSource.eventType === 'reject' ||
-        props.dataSource.eventType === 'cancel') ? (
+      (props?.data?.eventType === 'reject' ||
+        props?.data?.eventType === 'cancel') ? (
         <View style={styles.seperatorDate}>
           <View
             style={{
@@ -40,6 +40,7 @@ const MessageView: FC<MessageViewType> = (props: MessageViewType) => {
                 : props.message.data.eventType === 'cancel'
                 ? i18n.get('missed:call')
                 : null} */}
+              efsjngjk
             </Text>
           </View>
         </View>
