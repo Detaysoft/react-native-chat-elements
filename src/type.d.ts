@@ -78,14 +78,25 @@ export interface IChatListProps {
 
 /** Message Types */
 interface IMessage {
-  type?: string;
+  type?:
+    | 'location'
+    | 'photo'
+    | 'video'
+    | 'audio'
+    | 'file'
+    | 'text'
+    | 'system'
+    | 'meeting'
+    | 'meetingLink'
+    | 'reply';
   chatType?: string;
   position?: string;
   reply?: IReplyMessageProps;
-  sended?: string;
+  sended?: 'notsended' | 'forwarded' | string;
   date?: any;
   data?: any;
   selected?: boolean;
+  sendStatusIcon?: JSX.Element;
   messageColor?: any;
   retracted?: boolean;
   forwarded?: boolean;
@@ -93,7 +104,7 @@ interface IMessage {
   notch?: true;
   ownerId?: string;
   receiveId?;
-  seen?: string;
+  seen?: 'notseen' | string;
   seenUsers?: Array;
   messageTextColor?: object;
 }
@@ -247,8 +258,8 @@ export interface IVideoMessageProps extends IMessage {
 }
 
 export interface IMessageViewProps {
-  phoneIcon: JSX.Element;
-  phoneText: string;
+  phoneIcon?: JSX.Element;
+  phoneText?: string;
   downloadFile?: func;
   openFile?: func;
   reSendMessage?: func;
@@ -259,9 +270,23 @@ export interface IMessageViewProps {
   onPressCancelSelect?: func;
   onLongPressSelectMessage?: func;
   onPressGroupChat?: func;
-  sendStatusIcon?: JSX.Element;
   resendIcon?: JSX.Element;
   messageSendingErrorText?: string;
+}
+
+export interface IMessageListProps {
+  id: string;
+  noMoreMessages: string;
+  endOfMam: bool;
+  mamLoading: bool;
+  messageList: MessageType[];
+  onLoading: (item?) => void;
+  reSendMessage: (item?) => void;
+  downloadFile: (item?) => void;
+  onMessageSelect?: (item?) => void;
+  openFile: (item?) => void;
+  openMediaViewer: (item?) => void;
+  onScroll: (item?) => void;
 }
 
 export type MessageViewType = IMessageViewProps & MessageType;

@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   messageBox: {
-    maxHeight: 100,
+    // maxHeight: 100,
     paddingLeft: 10,
     paddingRight: 10,
     //  transform: [{skewY: '180deg'}, {rotate: '180deg'}],

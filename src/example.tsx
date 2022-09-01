@@ -9,6 +9,7 @@ import {
   ChatList,
   MessageTypes,
   MessageView,
+  MessageList,
 } from './components';
 
 const components = {
@@ -176,7 +177,7 @@ const components = {
       openFile={() => console.log('open file')}
       position="right"
       progress={<Text>progress</Text>}
-      selectMessage={() => console.log('select message')}
+      onLongPress={() => console.log('select message')}
     />
   ),
   locationMessage: (
@@ -186,7 +187,7 @@ const components = {
         'https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?'
       }
       onPress={() => console.log('on press')}
-      selectMessage={() => console.log('select message')}
+      onLongPress={() => console.log('select message')}
     />
   ),
   meetingMessage: (
@@ -198,12 +199,6 @@ const components = {
       dateText="date"
       downloadFile={() => console.log('download file')}
       icon={<Text>I</Text>}
-      message={{
-        type: 'meetingLink',
-        icon: <Text>icon</Text>,
-        onPress: () => console.log('onpress'),
-        title: 'jfvnbjksf',
-      }}
       onPressMeetingVideoLink={() => console.log('onPressMeetingVideoLink')}
       onPressTitle={() => console.log('onPressMeetingVideoLink')}
       onPressToggle={() => console.log('onPressMeetingVideoLink')}
@@ -240,7 +235,7 @@ const components = {
       id="10"
       openMediaViewer={() => console.log('open media viewer')}
       progress={<Text>progress</Text>}
-      selectMessage={() => console.log('select message')}
+      onLongPress={() => console.log('select message')}
     />
   ),
   replyMessage: (
@@ -249,7 +244,7 @@ const components = {
       closeButton={true}
       closeButtonIcon={<Text>CB</Text>}
       photoURL={require('../assets/download.png')}
-      onPressSelectMessage={() => console.log('select message')}
+      onLongPress={() => console.log('select message')}
       message={() => 'message'}
       title="title"
       titleColor="red"
@@ -285,7 +280,7 @@ const components = {
       }}
       onPressFile={() => console.log('on press file')}
       progress={<Text>P</Text>}
-      selectMessage={() => console.log('select message')}
+      onLongPress={() => console.log('select message')}
       videoPlayIcon={<Text>VPI</Text>}
     />
   ),
@@ -344,6 +339,137 @@ const components = {
         }}
       />
     </>
+  ),
+  messageList: (
+    <MessageList
+      id="string"
+      noMoreMessages="string"
+      endOfMam={false}
+      mamLoading={false}
+      messageList={[
+        {
+          type: 'meetingLink',
+          icon: <Text>icon</Text>,
+          onPress: () => console.log('onpress'),
+          title: 'kldnfve',
+          chatType: 'singlechat',
+          position: 'right',
+          reply: {},
+          sended: 'forwarded',
+          date: 'now',
+          data: 'any',
+          selected: false,
+          retracted: false,
+          forwarded: true,
+          id: '',
+          notch: true,
+          ownerId: 'string',
+          receiveId: '',
+          seen: 'string',
+          seenUsers: [],
+          messageColor: {
+            backgroundColor: '#5ba7c5',
+            borderBottomLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 0,
+            color: '#fff',
+            marginBottom: 3,
+            marginLeft: '10%',
+            marginTop: 3,
+            paddingBottom: 8,
+            paddingLeft: 9,
+            paddingRight: 9,
+            paddingTop: 6,
+            retractedColor: '#fff',
+          },
+          sendStatusIcon: <Text>✓</Text>,
+        },
+        {
+          type: 'meetingLink',
+          icon: <Text>icon</Text>,
+          onPress: () => console.log('onpress'),
+          title: 'kldnfve',
+          chatType: 'singlechat',
+          position: 'right',
+          reply: {},
+          sended: 'forwarded',
+          date: 'now',
+          data: 'any',
+          selected: false,
+          retracted: false,
+          forwarded: true,
+          id: '',
+          notch: true,
+          ownerId: 'string',
+          receiveId: '',
+          seen: 'string',
+          seenUsers: [],
+          messageColor: {
+            backgroundColor: '#5ba7c5',
+            borderBottomLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 0,
+            color: '#fff',
+            marginBottom: 3,
+            marginLeft: '10%',
+            marginTop: 3,
+            paddingBottom: 8,
+            paddingLeft: 9,
+            paddingRight: 9,
+            paddingTop: 6,
+            retractedColor: '#fff',
+          },
+          sendStatusIcon: <Text>✓</Text>,
+        },
+        {
+          type: 'meetingLink',
+          icon: <Text>icon</Text>,
+          onPress: () => console.log('onpress'),
+          title: 'kldnfve',
+          chatType: 'singlechat',
+          position: 'right',
+          reply: {},
+          sended: 'forwarded',
+          date: 'now',
+          data: 'any',
+          selected: false,
+          retracted: false,
+          forwarded: true,
+          id: '',
+          notch: true,
+          ownerId: 'string',
+          receiveId: '',
+          seen: 'string',
+          seenUsers: [],
+          messageColor: {
+            backgroundColor: '#5ba7c5',
+            borderBottomLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 0,
+            color: '#fff',
+            marginBottom: 3,
+            marginLeft: '10%',
+            marginTop: 3,
+            paddingBottom: 8,
+            paddingLeft: 9,
+            paddingRight: 9,
+            paddingTop: 6,
+            retractedColor: '#fff',
+          },
+          sendStatusIcon: <Text>✓</Text>,
+        },
+      ]}
+      onLoading={() => console.log('')}
+      reSendMessage={() => console.log('')}
+      downloadFile={() => console.log('')}
+      onMessageSelect={() => console.log('')}
+      openFile={() => console.log('')}
+      openMediaViewer={() => console.log('')}
+      onScroll={() => console.log('')}
+    />
   ),
 };
 

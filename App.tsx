@@ -41,6 +41,8 @@ const App = () => {
         return components.videoMessage;
       case 'messageView':
         return components.messageView;
+      case 'messageList':
+        return components.messageList;
       default:
         break;
     }
@@ -134,6 +136,12 @@ const App = () => {
             <Button
               title="messageView"
               onPress={() => setshow('messageView')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="messageList"
+              onPress={() => setshow('messageList')}
             />
           </View>
         </View>
