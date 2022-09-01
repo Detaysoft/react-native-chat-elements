@@ -6,7 +6,7 @@ import styles from './fileMessage-css';
 const FileMessage: FC<IFileMessageProps> = (props: IFileMessageProps) => {
   return (
     <TouchableOpacity
-      onLongPress={props.selectMessage}
+      onLongPress={props.onLongPress}
       onPress={() => props.onPress}
       style={[
         styles.fileItemContainer,

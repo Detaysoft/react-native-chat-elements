@@ -5,13 +5,7 @@ import styles from './photoMessage-css';
 
 const PhotoMessage: FC<IPhotoMessageProps> = (props: IPhotoMessageProps) => {
   return (
-    <TouchableOpacity
-      onLongPress={props.selectMessage}
-      onPress={() => {
-        if (props.data?.status?.download) {
-          props.openMediaViewer?.();
-        }
-      }}>
+    <TouchableOpacity onLongPress={props.onLongPress} onPress={props.onPress}>
       <View style={props.style}>
         <Image
           style={[styles.chatMessageImage]}
@@ -22,14 +16,14 @@ const PhotoMessage: FC<IPhotoMessageProps> = (props: IPhotoMessageProps) => {
         {!props.data?.status?.click ? (
           <TouchableOpacity
             style={styles.imageDownloadButton}
-            onLongPress={props.selectMessage}
+            onLongPress={props.onLongPress}
             onPress={() => props.downloadFile?.(props.id)}>
             <View style={styles.imgDownloadBtn}>{props.downloadIcon}</View>
           </TouchableOpacity>
         ) : null}
         {props.data?.status?.error ? (
           <TouchableOpacity
-            onLongPress={props.selectMessage}
+            onLongPress={props.onLongPress}
             style={styles.imageDownloadButton}>
             {props.errorIcon}
           </TouchableOpacity>

@@ -99,7 +99,6 @@ interface IMessage {
 }
 export interface IAudioMessageProps extends IMessage {
   audioURL?: string;
-  position?: string;
   duration?: number;
   started?: boolean;
   playIcon?: JSX.Element;
@@ -114,7 +113,6 @@ export interface IAudioMessageProps extends IMessage {
 
 export interface IFileMessageProps extends IMessage {
   id?: string;
-  position?: string;
   body?: string;
   progress?: JSX.Element;
   fileIcon?: JSX.Element;
@@ -134,7 +132,7 @@ export interface IFileMessageProps extends IMessage {
   fileSizeConversion?: (item?) => string;
   openFile?: (item?) => void;
   downloadFile?: (item?) => void;
-  selectMessage?: (item?) => void;
+  onLongPress?: (item?) => void;
 }
 
 export interface ILocationMessageProps extends IMessage {
@@ -142,7 +140,7 @@ export interface ILocationMessageProps extends IMessage {
   style?: object;
   onPress?: (item?) => void;
   locationURL?: (item?) => string;
-  selectMessage?: (item?) => void;
+  onLongPress?: (item?) => void;
 }
 
 export type MessageType =
@@ -156,7 +154,11 @@ export type MessageType =
   | ({type: 'meeting'} & IMeetingMessageProps)
   | ({type: 'meetingLink'} & IMeetingLinkMessageProps)
   | ({type: 'reply'} & IReplyMessageProps);
-
+export interface IMeetingLinkMessageProps extends IMessage {
+  title?: string;
+  icon?: JSX.Element;
+  onPress?: (item?) => void;
+}
 export interface IMeetingMessageProps extends IMessage {
   dataSource?: array;
   title?: string;
@@ -175,17 +177,12 @@ export interface IMeetingMessageProps extends IMessage {
   onPressToggle?: (item?) => any;
   downloadFile?: (item?) => any;
   openFile?: (item?) => any;
-  message?: MessageType;
   reSendMessage?: (item?) => any;
   selectMessage?: (item?) => any;
   cancelSelect?: (item?) => any;
   openImageViewer?: (item?) => any;
 }
-export interface IMeetingLinkMessageProps extends IMessage {
-  title?: string;
-  icon?: JSX.Element;
-  onPress?: (item?) => void;
-}
+
 export interface IPhotoMessageProps extends IMessage {
   id?: string;
   data?: {
@@ -201,7 +198,8 @@ export interface IPhotoMessageProps extends IMessage {
   downloadIcon?: JSX.Element;
   errorIcon?: JSX.Element;
   progress?: JSX.Element;
-  selectMessage?: (item?) => void;
+  onPress?: (item?) => void;
+  onLongPress?: (item?) => void;
   downloadFile?: (item?: any) => void;
   openMediaViewer?: (item?) => any;
 }
@@ -213,7 +211,7 @@ export interface IReplyMessageProps extends IMessage {
   closeButton?: bool;
   closeButtonIcon?: JSX.Element;
   message?: (item?) => string; //string
-  onPressSelectMessage?: (item?) => void;
+  onLongPress?: (item?) => void;
 }
 
 export interface ISystemMessageProps extends IMessage {
@@ -245,10 +243,12 @@ export interface IVideoMessageProps extends IMessage {
   progress?: JSX.Element;
   onPress?: (item?) => void;
   onPressFile?: (item?) => void;
-  selectMessage?: (item?) => void;
+  onLongPress?: (item?) => void;
 }
 
 export interface IMessageViewProps {
+  phoneIcon: JSX.Element;
+  phoneText: string;
   downloadFile?: func;
   openFile?: func;
   reSendMessage?: func;

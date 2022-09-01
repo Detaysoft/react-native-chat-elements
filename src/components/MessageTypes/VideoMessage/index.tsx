@@ -6,7 +6,7 @@ import styles from './videoMessage';
 const VideoMessage: FC<IVideoMessageProps> = (props: IVideoMessageProps) => {
   return (
     <TouchableOpacity
-      onLongPress={props.selectMessage}
+      onLongPress={props.onLongPress}
       style={{
         width: 200,
       }}

@@ -22,26 +22,8 @@ const MessageView: FC<MessageViewType> = (props: MessageViewType) => {
               backgroundColor: '#ec764fd6',
               maxWidth: '55%',
             }}>
-            {/* {props.message.data.eventType === 'reject' && (
-              // <IconF name={'phone-missed'} size={20} color={'#f13b3b'} />
-            )}
-            {props.message.data.eventType === 'cancel' && (
-              // <IconM
-              //   type={'materialize'}
-              //   name={'phone-missed'}
-              //   size={20}
-              //   color={'#f13b3b'}
-              // />
-            )} */}
-
-            <Text style={styles.seperatorDateText}>
-              {/* {props.message.data.eventType === 'reject'
-                ? i18n.get('rejected:call')
-                : props.message.data.eventType === 'cancel'
-                ? i18n.get('missed:call')
-                : null} */}
-              efsjngjk
-            </Text>
+            {props.phoneIcon}
+            <Text style={styles.seperatorDateText}>{props.phoneText}</Text>
           </View>
         </View>
       ) : props?.type === 'system' ? (

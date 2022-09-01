@@ -8,7 +8,7 @@ const LocationMessage: FC<ILocationMessageProps> = (
 ) => {
   return (
     <TouchableOpacity
-      onLongPress={props.selectMessage}
+      onLongPress={props.onLongPress}
       style={props.style}
       onPress={props.onPress}>
       <Image

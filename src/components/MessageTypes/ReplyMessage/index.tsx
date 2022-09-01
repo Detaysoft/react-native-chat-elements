@@ -6,7 +6,7 @@ import styles from './replyMessage-css';
 const ReplyMessage: FC<IReplyMessageProps> = (props: IReplyMessageProps) => {
   return (
     <TouchableOpacity
-      onLongPress={props.onPressSelectMessage}
+      onLongPress={props.onLongPress}
       style={{
         width: '100%',
         marginBottom: 5,
