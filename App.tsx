@@ -43,6 +43,8 @@ const App = () => {
         return components.messageView;
       case 'messageList':
         return components.messageList;
+      case 'messageSender':
+        return components.messageSender;
       default:
         break;
     }
@@ -142,6 +144,12 @@ const App = () => {
             <Button
               title="messageList"
               onPress={() => setshow('messageList')}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="messageSender"
+              onPress={() => setshow('messageSender')}
             />
           </View>
         </View>

@@ -7,6 +7,7 @@ import ChatList from './ChatList';
 import MessageTypes from './MessageTypes';
 import MessageView from './MessageView';
 import MessageList from './MessageList';
+import MessageSender from './MessageSender';
 
 export {
   Avatar,
@@ -18,4 +19,5 @@ export {
   MessageTypes,
   MessageView,
   MessageList,
+  MessageSender,
 };

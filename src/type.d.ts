@@ -290,3 +290,33 @@ export interface IMessageListProps {
 }
 
 export type MessageViewType = IMessageViewProps & MessageType;
+
+export interface IMessageSenderProps {
+  id?: string;
+  type?: string;
+  recordAudio?: boolean;
+  messageInputAreaStyle?: object;
+  replyMessage?: IReplyMessageProps;
+  textInputRef?: React.LegacyRef;
+  messageInputStyle?: object;
+  inputPlaceholder?: string;
+  inputPlaceholderTextColor?: string;
+  inputUnderLineColorAndroid?: ColorValue;
+  inputMultiLine?: boolean;
+  inputMaxLength?: number;
+  opacityShow?: number;
+  opacityHide?: number;
+  actionSheetIcon?: JSX.Element;
+  sendMessageIcon?: JSX.Element;
+  sendableMessage?: boolean;
+  actionSheet: IActionSheet;
+  inputOnContentSizeChange?: (
+    e?: NativeSyntheticEvent<TextInputContentSizeChangeEventData>,
+  ) => void;
+  inputOnChangeText?: (text: string) => void;
+  inputOnChange?: (e: NativeSyntheticEvent<TextInputChangeEventData>) => void;
+  onActionSheet?: () => void;
+  sendPhoto?: (item?) => void;
+  onSendMessage?: () => void;
+  toggleAudioRecorder?: () => void;
+}

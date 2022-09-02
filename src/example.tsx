@@ -10,6 +10,7 @@ import {
   MessageTypes,
   MessageView,
   MessageList,
+  MessageSender,
 } from './components';
 
 const components = {
@@ -469,6 +470,35 @@ const components = {
       openFile={() => console.log('')}
       openMediaViewer={() => console.log('')}
       onScroll={() => console.log('')}
+    />
+  ),
+  messageSender: (
+    <MessageSender
+      id="string"
+      type=""
+      recordAudio={false}
+      messageInputAreaStyle={{}}
+      //  replyMessage={{}}
+      textInputRef="React.LegacyRef"
+      messageInputStyle={{}}
+      inputPlaceholder=""
+      inputPlaceholderTextColor="red"
+      inputUnderLineColorAndroid=""
+      inputMultiLine={true}
+      inputMaxLength={10}
+      opacityShow={10}
+      opacityHide={1}
+      // actionSheetIcon={<Text>A</Text>}
+      sendMessageIcon={<Text>Send</Text>}
+      sendableMessage={true}
+      actionSheet={{options: []}}
+      inputOnContentSizeChange={() => console.log('')}
+      inputOnChangeText={() => console.log()}
+      inputOnChange={() => console.log()}
+      onActionSheet={() => console.log()}
+      sendPhoto={() => console.log()}
+      onSendMessage={() => console.log()}
+      toggleAudioRecorder={() => console.log()}
     />
   ),
 };
