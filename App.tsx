@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, SafeAreaView, StyleSheet, View} from 'react-native';
-import components from './src/example';
+import components from './example/example';
 
 const App = () => {
   const [show, setshow] = useState('');
@@ -9,42 +9,15 @@ const App = () => {
     switch (show) {
       case 'avatar':
         return components.avatar;
-      case 'chatButton':
-        return components.chatButton;
+
       case 'popup':
         return components.popup;
-      case 'customActionSheet':
-        return components.customActionSheet;
-      case 'chatItem':
-        return components.chatItem;
+
       case 'chatList':
         return components.chatList;
-      case 'audioMessage':
-        return components.audioMessage;
-      case 'fileMessage':
-        return components.fileMessage;
-      case 'locationMessage':
-        return components.locationMessage;
-      case 'meetingMessage':
-        return components.meetingMessage;
-      case 'meetingLinkMessage':
-        return components.meetingLinkMessage;
-      case 'photoMessage':
-        return components.photoMessage;
-      case 'replyMessage':
-        return components.replyMessage;
-      case 'systemMessage':
-        return components.systemMessage;
-      case 'textMessage':
-        return components.textMessage;
-      case 'videoMessage':
-        return components.videoMessage;
-      case 'messageView':
-        return components.messageView;
+
       case 'messageList':
         return components.messageList;
-      case 'messageSender':
-        return components.messageSender;
       default:
         break;
     }
@@ -57,99 +30,15 @@ const App = () => {
             <Button title="avatar" onPress={() => setshow('avatar')} />
           </View>
           <View style={styles.button}>
-            <Button title="chatButton" onPress={() => setshow('chatButton')} />
-          </View>
-          <View style={styles.button}>
             <Button title="popup" onPress={() => setshow('popup')} />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="customActionSheet"
-              onPress={() => setshow('customActionSheet')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button title="chatItem" onPress={() => setshow('chatItem')} />
           </View>
           <View style={styles.button}>
             <Button title="chatList" onPress={() => setshow('chatList')} />
           </View>
           <View style={styles.button}>
             <Button
-              title="audioMessage"
-              onPress={() => setshow('audioMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="fileMessage"
-              onPress={() => setshow('fileMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="locationMessage"
-              onPress={() => setshow('locationMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="meetingMessage"
-              onPress={() => setshow('meetingMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="meetingLinkMessage"
-              onPress={() => setshow('meetingLinkMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="photoMessage"
-              onPress={() => setshow('photoMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="replyMessage"
-              onPress={() => setshow('replyMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="systemMessage"
-              onPress={() => setshow('systemMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="textMessage"
-              onPress={() => setshow('textMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="videoMessage"
-              onPress={() => setshow('videoMessage')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="messageView"
-              onPress={() => setshow('messageView')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
               title="messageList"
               onPress={() => setshow('messageList')}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="messageSender"
-              onPress={() => setshow('messageSender')}
             />
           </View>
         </View>
