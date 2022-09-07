@@ -15,7 +15,8 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
       scrollEventThrottle={100}
       style={styles.contentArea}>
       <View style={styles.contentAreaListView}>
-        {props.messageList.map((item: any, i: any) => (
+        {console.log('messagelist', props.messageList)}
+        {props.messageList?.map((item: any, i: any) => (
           <MemorizedMessageView key={i} {...item} />
         ))}
         {props.endOfMam && (

@@ -8,10 +8,22 @@ import {
   MessageSender,
   CustomActionSheet,
 } from '../src/components';
+import {MessageType} from '../src/type';
+import {
+  audioMessage,
+  fileMessage,
+  locationMessage,
+  meetingLinkMessage,
+  meetingMessage,
+  photoMessage,
+  replyMessage,
+  systemMessage,
+  textMessage,
+  videoMessage,
+} from './messageTypes';
 
 const components = {
   avatar: <Avatar source={require('../assets/download.png')} />,
-
   popup: (
     <Popup
       source={require('../assets/calendar.jpg')}
@@ -36,7 +48,6 @@ const components = {
       }}
     />
   ),
-
   chatList: (
     <ChatList
       emptyChatText="Konuşma listeniz boş."
@@ -99,46 +110,7 @@ const components = {
         noMoreMessages="string"
         endOfMam={false}
         mamLoading={false}
-        messageList={[
-          {
-            type: 'meetingLink',
-            icon: <Text>icon</Text>,
-            onPress: () => console.log('onpress'),
-            title: 'kldnfve',
-            chatType: 'singlechat',
-            position: 'right',
-            reply: {},
-            sended: 'forwarded',
-            date: 'now',
-            data: 'any',
-            selected: false,
-            retracted: false,
-            forwarded: true,
-            id: '',
-            notch: true,
-            ownerId: 'string',
-            receiveId: '',
-            seen: 'string',
-            seenUsers: [],
-            messageColor: {
-              backgroundColor: '#5ba7c5',
-              borderBottomLeftRadius: 10,
-              borderBottomRightRadius: 10,
-              borderTopLeftRadius: 10,
-              borderTopRightRadius: 0,
-              color: '#fff',
-              marginBottom: 3,
-              marginLeft: '10%',
-              marginTop: 3,
-              paddingBottom: 8,
-              paddingLeft: 9,
-              paddingRight: 9,
-              paddingTop: 6,
-              retractedColor: '#fff',
-            },
-            sendStatusIcon: <Text>✓</Text>,
-          },
-        ]}
+        messageList={messages}
         onLoading={() => console.log('')}
         reSendMessage={() => console.log('')}
         downloadFile={() => console.log('')}
@@ -187,11 +159,51 @@ const components = {
         inputOnChange={() => console.log()}
         onActionSheet={() => console.log()}
         sendPhoto={() => console.log()}
-        onSendMessage={() => console.log('sended')}
+        onSendMessage={() => addMessage()}
         toggleAudioRecorder={() => console.log()}
       />
     </View>
   ),
 };
 
+var messages: any = [];
+const addMessage = () => {
+  const randomNumber = Math.floor((Math.random() * 10) % 10);
+  console.log(randomNumber);
+
+  switch (randomNumber) {
+    case 0:
+      messages.push(audioMessage);
+      break;
+    case 1:
+      messages.push(fileMessage);
+      break;
+    case 2:
+      messages.push(locationMessage);
+      break;
+    case 3:
+      messages.push(meetingMessage);
+      break;
+    case 4:
+      messages.push(meetingLinkMessage);
+      break;
+    case 5:
+      messages.push(photoMessage);
+      break;
+    case 6:
+      messages.push(replyMessage);
+      break;
+    case 7:
+      messages.push(systemMessage);
+      break;
+    case 8:
+      messages.push(textMessage);
+      break;
+    case 9:
+      messages.push(videoMessage);
+      break;
+    default:
+      break;
+  }
+};
 export default components;
