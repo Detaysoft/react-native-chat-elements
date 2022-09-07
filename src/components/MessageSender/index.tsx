@@ -82,7 +82,7 @@ const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
                   },
                 ]}
                 onPress={() => props.sendPhoto?.('shot')}>
-                {/* <IconE name="camera" size={28} color={'white'} /> */}
+                {props.cameraIcon}
               </TouchableOpacity>
             </Animated.View>
             <Animated.View
@@ -98,7 +98,6 @@ const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
                 style={[styles.transparentButton, styles.alignBottom]}
                 onPress={props.onSendMessage}>
                 {props.sendMessageIcon}
-                {/* <IconM name="send" size={28} color={'#50afce'} /> */}
               </TouchableOpacity>
             </Animated.View>
             {!props.sendableMessage && (
@@ -114,19 +113,12 @@ const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
                 <TouchableOpacity
                   style={[styles.transparentButton, styles.alignBottom]}
                   onPress={props.toggleAudioRecorder}>
-                  {/* <IconM name="mic" size={28} color={'#50afce'} /> */}
+                  {props.micIcon}
                 </TouchableOpacity>
               </Animated.View>
             )}
           </>
         )}
-        <CustomActionSheet
-          title={props.actionSheet.title}
-          options={props.actionSheet.options}
-          cancelButtonIndex={props.actionSheet.cancelButtonIndex}
-          destructiveButtonIndex={props.actionSheet.destructiveButtonIndex}
-          onPress={props.actionSheet.onPress}
-        />
         {/* {this.state.recordAudio === true && (
           <Animated.View style={{opacity: this.state.recorderOpacity}}>
             <AudioRecorder

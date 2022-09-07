@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     flex: 1,
     paddingBottom: 0,
-    // transform: [{skewY: '180deg'}, {rotate: '180deg'}],
+    transform: [{skewY: '180deg'}, {rotate: '180deg'}],
   },
   contentAreaListView: {
     flex: 1,

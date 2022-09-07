@@ -304,12 +304,13 @@ export interface IMessageSenderProps {
   inputUnderLineColorAndroid?: ColorValue;
   inputMultiLine?: boolean;
   inputMaxLength?: number;
-  opacityShow?: number;
-  opacityHide?: number;
+  opacityShow?: Animated.Value;
+  opacityHide?: Animated.Value;
   actionSheetIcon?: JSX.Element;
+  cameraIcon?: JSX.Element;
+  micIcon?: JSX.Element;
   sendMessageIcon?: JSX.Element;
   sendableMessage?: boolean;
-  actionSheet: IActionSheet;
   inputOnContentSizeChange?: (
     e?: NativeSyntheticEvent<TextInputContentSizeChangeEventData>,
   ) => void;

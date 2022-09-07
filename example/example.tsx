@@ -1,11 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Animated, Text, View} from 'react-native';
 import {
   Avatar,
   Popup,
   ChatList,
   MessageList,
   MessageSender,
+  CustomActionSheet,
 } from '../src/components';
 
 const components = {
@@ -28,11 +29,6 @@ const components = {
           paddingHorizontal: 20,
           borderRadius: 10,
           fontSize: 16,
-        },
-        style: {
-          position: 'absolute',
-          top: 50,
-          right: 40,
         },
         onPress: () => {
           console.log('popup clicked');
@@ -95,7 +91,9 @@ const components = {
   ),
   messageList: (
     <View
-      style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      style={{
+        marginBottom: 80,
+      }}>
       <MessageList
         id="string"
         noMoreMessages="string"
@@ -157,23 +155,39 @@ const components = {
         //  replyMessage={{}}
         textInputRef="React.LegacyRef"
         messageInputStyle={{}}
-        inputPlaceholder=""
-        inputPlaceholderTextColor="red"
-        inputUnderLineColorAndroid=""
+        inputPlaceholder="bir şeyler yaz"
+        inputPlaceholderTextColor="#bdbdbd"
+        inputUnderLineColorAndroid="transparent"
         inputMultiLine={true}
-        inputMaxLength={10}
-        opacityShow={10}
-        opacityHide={1}
-        // actionSheetIcon={<Text>A</Text>}
-        sendMessageIcon={<Text>Send</Text>}
+        inputMaxLength={30}
+        opacityShow={new Animated.Value(1)}
+        //  opacityHide={new Animated.Value(0)}
+        actionSheetIcon={
+          <CustomActionSheet
+            button={{
+              title: '➕',
+              contentStyle: {
+                backgroundColor: 'transparent',
+                color: 'white',
+              },
+            }}
+            title="Which one do you like ?"
+            options={['Apple', 'Banana', 'cancel']}
+            cancelButtonIndex={2}
+            destructiveButtonIndex={2}
+            onPress={index => console.log('action sheet', index)}
+          />
+        }
+        sendMessageIcon={<Text style={{}}>📡</Text>}
+        micIcon={<Text>🎙️</Text>}
+        cameraIcon={<Text>📷</Text>}
         sendableMessage={true}
-        actionSheet={{options: []}}
-        inputOnContentSizeChange={() => console.log('')}
+        inputOnContentSizeChange={() => console.log()}
         inputOnChangeText={() => console.log()}
         inputOnChange={() => console.log()}
         onActionSheet={() => console.log()}
         sendPhoto={() => console.log()}
-        onSendMessage={() => console.log()}
+        onSendMessage={() => console.log('sended')}
         toggleAudioRecorder={() => console.log()}
       />
     </View>
