@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import {Animated, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {IMessageSenderProps} from '../../type';
-import CustomActionSheet from '../CustomActionSheet';
-import ReplyMessage from '../MessageTypes/ReplyMessage';
+import CustomActionSheet from '../CustomActionSheet/CustomActionSheet';
+import ReplyMessage from '../Messages/ReplyMessage/ReplyMessage';
 import styles from './messageSender-css';
 
 const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {

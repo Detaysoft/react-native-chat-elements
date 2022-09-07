@@ -1,13 +1,13 @@
-import Avatar from './Avatar';
-import ChatButton from './ChatButton';
-import Popup from './Popup';
-import CustomActionSheet from './CustomActionSheet';
-import ChatListItem from './ChatListItem';
-import ChatList from './ChatList';
-import MessageTypes from './MessageTypes';
-import MessageView from './MessageView';
-import MessageList from './MessageList';
-import MessageSender from './MessageSender';
+import Avatar from './Avatar/Avatar';
+import ChatButton from './ChatButton/ChatButton';
+import Popup from './Popup/Popup';
+import CustomActionSheet from './CustomActionSheet/CustomActionSheet';
+import ChatListItem from './ChatListItem/ChatListItem';
+import ChatList from './ChatList/ChatList';
+import MessageTypes from './Messages';
+import MessageView from './MessageView/MessageView';
+import MessageList from './MessageList/MessageList';
+import MessageSender from './MessageSender/MessageSender';
 
 export {
   Avatar,

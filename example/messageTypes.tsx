@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
+import {setData} from '../src/components/test';
 import {MessageType} from '../src/type';
 
 export const audioMessage: MessageType = {
@@ -101,7 +102,7 @@ export const locationMessage: MessageType = {
   locationURL: () =>
     'https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?',
   onPress: () => console.log('on press'),
-  onLongPress: () => console.log('select message'),
+  onLongPress: props => setData(props),
   chatType: 'singlechat',
   position: 'right',
   reply: {},
@@ -111,7 +112,7 @@ export const locationMessage: MessageType = {
   selected: false,
   retracted: false,
   forwarded: true,
-  id: '',
+  id: 'asd',
   notch: true,
   ownerId: 'string',
   receiveId: '',

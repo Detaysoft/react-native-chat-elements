@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {IChatListItemProps} from '../../type';
-import Avatar from '../Avatar';
+import Avatar from '../Avatar/Avatar';
 import styles from './chatListItem-css';
 
 const ChatListItem: FC<IChatListItemProps> = (props: IChatListItemProps) => {

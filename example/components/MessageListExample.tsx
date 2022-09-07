@@ -18,44 +18,72 @@ import {
   videoMessage,
 } from '../messageTypes';
 
-type Props = {};
-
-const MessageListExample = (props: Props) => {
-  const [messages, setMessages] = useState<any>([]);
+const MessageListExample = () => {
+  const [message, setMessage] = useState<string>('');
+  const [messageListArray, setMessageListArray] = useState<any>([]);
   const addMessage = () => {
     const randomNumber = Math.floor((Math.random() * 10) % 10);
-    console.log(randomNumber);
 
     switch (randomNumber) {
       case 0:
-        setMessages([...messages, setMessages(audioMessage)]);
+        setMessage('audioMessage');
         break;
       case 1:
-        setMessages([...messages, setMessages(fileMessage)]);
+        setMessage('fileMessage');
         break;
       case 2:
-        setMessages([...messages, setMessages(locationMessage)]);
+        setMessage('locationMessage');
         break;
       case 3:
-        setMessages([...messages, setMessages(meetingMessage)]);
+        setMessage('meetingMessage');
         break;
       case 4:
-        setMessages([...messages, setMessages(meetingLinkMessage)]);
+        setMessage('meetingLinkMessage');
         break;
       case 5:
-        setMessages([...messages, setMessages(photoMessage)]);
+        setMessage('photoMessage');
         break;
       case 6:
-        setMessages([...messages, setMessages(replyMessage)]);
+        setMessage('replyMessage');
+        break;
       case 7:
-        setMessages([...messages, setMessages(systemMessage)]);
+        setMessage('systemMessage');
         break;
       case 8:
-        setMessages([...messages, setMessages(textMessage)]);
+        setMessage('textMessage');
         break;
       case 9:
-        setMessages([...messages, setMessages(videoMessage)]);
+        setMessage('videoMessage');
+      default:
+        setMessage('videoMessage');
         break;
+    }
+    setMessageListArray([...messageListArray, randomMessage(message)]);
+  };
+  const randomMessage = (type: string) => {
+    switch (type) {
+      case 'audioMessage':
+        return audioMessage;
+      case 'fileMessage':
+        return fileMessage;
+      case 'locationMessage':
+        return locationMessage;
+      case 'location':
+        return locationMessage;
+      case 'meetingMessage':
+        return meetingMessage;
+      case 'meetingLinkMessage':
+        return meetingLinkMessage;
+      case 'photoMessage':
+        return photoMessage;
+      case 'replyMessage':
+        return replyMessage;
+      case 'systemMessage':
+        return systemMessage;
+      case 'textMessage':
+        return textMessage;
+      case 'videoMessage':
+        return videoMessage;
       default:
         break;
     }
@@ -70,7 +98,7 @@ const MessageListExample = (props: Props) => {
         noMoreMessages="string"
         endOfMam={false}
         mamLoading={false}
-        messageList={messages}
+        messageList={messageListArray}
         onLoading={() => console.log('')}
         reSendMessage={() => console.log('')}
         downloadFile={() => console.log('')}

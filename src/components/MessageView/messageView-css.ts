@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     position: 'relative',
     width: '100%',
-    zIndex: 999999,
+    zIndex: 0,
     opacity: 0.7,
     backgroundColor: '#5ba7c58f',
   },

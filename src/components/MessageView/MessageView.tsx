@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {MessageViewType} from '../../type';
-import MessageTypes from '../MessageTypes';
+import MessageTypes from '../Messages';
 import styles from './messageView-css';
 
 const MessageView: FC<MessageViewType> = (props: MessageViewType) => {

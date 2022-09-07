@@ -2,7 +2,7 @@ import React, {Component, FC} from 'react';
 import {View} from 'react-native';
 import {IActionSheet} from '../../type';
 import ActionSheet from 'react-native-actionsheet';
-import ChatButton from '../ChatButton';
+import ChatButton from '../ChatButton/ChatButton';
 
 class CustomActionSheet extends Component<IActionSheet> {
   constructor(props: IActionSheet) {

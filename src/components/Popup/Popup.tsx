@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import {Alert, Image, Modal, Pressable, Text, View} from 'react-native';
 import {IPopupProps} from '../../type';
-import ChatButton from '../ChatButton';
+import ChatButton from '../ChatButton/ChatButton';
 import styles from './popup-css';
 
 const Popup: FC<IPopupProps> = (props: IPopupProps) => {
@@ -10,14 +10,14 @@ const Popup: FC<IPopupProps> = (props: IPopupProps) => {
   return (
     <>
       <ChatButton
-        icon={props.button.icon}
-        iconColor={props.button.iconColor}
-        iconSize={props.button.iconSize}
-        iconFamily={props.button.iconFamily}
-        title={props.button.title}
+        icon={props.button?.icon}
+        iconColor={props.button?.iconColor}
+        iconSize={props.button?.iconSize}
+        iconFamily={props.button?.iconFamily}
+        title={props.button?.title}
         onPress={() => setModalVisible(true)}
-        style={[props.button.style]}
-        contentStyle={props.button.contentStyle}
+        style={[props.button?.style]}
+        contentStyle={props.button?.contentStyle}
       />
       <View style={styles.centeredView}>
         <Modal

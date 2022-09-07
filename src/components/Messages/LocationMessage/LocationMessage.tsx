@@ -6,10 +6,15 @@ import styles from './locationMessage-css';
 const LocationMessage: FC<ILocationMessageProps> = (
   props: ILocationMessageProps,
 ) => {
+  const handleOnLongPress = () => {
+    console.log('test', props.id);
+
+    props.onLongPress?.(props.id);
+  };
   return (
     <TouchableOpacity
-      onLongPress={props.onLongPress}
-      style={props.style}
+      onLongPress={handleOnLongPress}
+      style={{...props.style, backgroundColor: 'red'}}
       onPress={props.onPress}>
       <Image
         style={[styles.chatMessageImage, props.imageStyle]}
