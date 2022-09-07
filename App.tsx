@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
 import {Button, SafeAreaView, StyleSheet, View} from 'react-native';
-import components from './example/example';
+import {
+  AvatarExample,
+  ChatListExample,
+  MessageListExample,
+  PopupExample,
+} from './example/components';
 
 const App = () => {
   const [show, setshow] = useState('');
@@ -8,16 +13,13 @@ const App = () => {
   const showELement = () => {
     switch (show) {
       case 'avatar':
-        return components.avatar;
-
+        return <AvatarExample />;
       case 'popup':
-        return components.popup;
-
+        return <PopupExample />;
       case 'chatList':
-        return components.chatList;
-
+        return <ChatListExample />;
       case 'messageList':
-        return components.messageList;
+        return <MessageListExample />;
       default:
         break;
     }
