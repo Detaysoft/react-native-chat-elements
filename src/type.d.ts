@@ -321,3 +321,23 @@ export interface IMessageSenderProps {
   onSendMessage?: () => void;
   toggleAudioRecorder?: () => void;
 }
+
+export interface IAudioRecorderProps {
+  toggleAudioRecorder: func;
+  chatId: string;
+  recorded: boolean;
+  recording: boolean;
+  duration: number;
+  startRecording: string;
+  beingRecorded: string;
+  recorded: string;
+  safeCloseIcon: JSX.Element;
+  stopRecordIcon: JSX.Element;
+  startRecordIcon: JSX.Element;
+  sendRecordIcon: JSX.Element;
+  recordTime: JSX.Element;
+  onPressSafeClose: () => void;
+  onPressStopRecord: () => void;
+  onPressStartRecord: () => void;
+  onPressSendRecord: () => void;
+}
