@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {Animated, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {IMessageSenderProps} from '../../type';
+import AudioRecorder from '../AudioRecorder/AudioRecorder';
 import CustomActionSheet from '../CustomActionSheet/CustomActionSheet';
 import ReplyMessage from '../Messages/ReplyMessage/ReplyMessage';
 import styles from './messageSender-css';
@@ -119,14 +120,29 @@ const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
             )}
           </>
         )}
-        {/* {this.state.recordAudio === true && (
-          <Animated.View style={{opacity: this.state.recorderOpacity}}>
+        {props.recordAudio === true && (
+          <Animated.View style={{opacity: props.recorderOpacity}}>
             <AudioRecorder
               chatId={props.id}
-              toggleAudioRecorder={this.toggleAudioRecorder}
+              toggleAudioRecorder={props.toggleAudioRecorder}
+              recorded={false}
+              recording={false}
+              duration={0}
+              startRecording={'startRecording'}
+              beingRecorded={'beingRecorded'}
+              recordingFinished={'recorded'}
+              safeCloseIcon={<Text>X</Text>}
+              stopRecordIcon={<Text>D</Text>}
+              startRecordIcon={<Text>B</Text>}
+              sendRecordIcon={<Text>G</Text>}
+              recordTime={<Text>00:00</Text>}
+              onPressSafeClose={() => console.log('onPressSafeClose')}
+              onPressStopRecord={() => console.log('onPressStopRecord')}
+              onPressStartRecord={() => console.log('onPressStartRecord')}
+              onPressSendRecord={() => console.log('onPressSendRecord')}
             />
           </Animated.View>
-        )} */}
+        )}
       </View>
     </>
   );

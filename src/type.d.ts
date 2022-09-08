@@ -311,6 +311,7 @@ export interface IMessageSenderProps {
   micIcon?: JSX.Element;
   sendMessageIcon?: JSX.Element;
   sendableMessage?: boolean;
+  recorderOpacity: Animated.Value;
   inputOnContentSizeChange?: (
     e?: NativeSyntheticEvent<TextInputContentSizeChangeEventData>,
   ) => void;
@@ -323,21 +324,21 @@ export interface IMessageSenderProps {
 }
 
 export interface IAudioRecorderProps {
-  toggleAudioRecorder: func;
-  chatId: string;
-  recorded: boolean;
-  recording: boolean;
-  duration: number;
-  startRecording: string;
-  beingRecorded: string;
-  recorded: string;
-  safeCloseIcon: JSX.Element;
-  stopRecordIcon: JSX.Element;
-  startRecordIcon: JSX.Element;
-  sendRecordIcon: JSX.Element;
-  recordTime: JSX.Element;
-  onPressSafeClose: () => void;
-  onPressStopRecord: () => void;
-  onPressStartRecord: () => void;
-  onPressSendRecord: () => void;
+  chatId?: string;
+  recorded?: boolean;
+  recording?: boolean;
+  duration?: number;
+  startRecording?: string;
+  beingRecorded?: string;
+  recordingFinished?: string;
+  safeCloseIcon?: JSX.Element;
+  stopRecordIcon?: JSX.Element;
+  startRecordIcon?: JSX.Element;
+  sendRecordIcon?: JSX.Element;
+  recordTime?: JSX.Element;
+  onPressSafeClose?: () => void;
+  onPressStopRecord?: () => void;
+  onPressStartRecord?: () => void;
+  onPressSendRecord?: () => void;
+  toggleAudioRecorder?: () => void;
 }

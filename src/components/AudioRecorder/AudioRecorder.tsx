@@ -55,7 +55,7 @@ const AudioRecorder: FC<IAudioRecorderProps> = (props: IAudioRecorderProps) => {
           {props.recorded === true &&
             props.recording === false &&
             props.recording === false &&
-            props.recorded}
+            props.recordingFinished}
         </Text>
       </View>
       <View>{props.recordTime}</View>

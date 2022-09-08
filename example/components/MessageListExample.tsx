@@ -110,7 +110,7 @@ const MessageListExample = () => {
       <MessageSender
         id="string"
         type=""
-        recordAudio={false}
+        recordAudio={true}
         messageInputAreaStyle={{}}
         //  replyMessage={{}}
         textInputRef="React.LegacyRef"
@@ -121,6 +121,7 @@ const MessageListExample = () => {
         inputMultiLine={true}
         inputMaxLength={30}
         opacityShow={new Animated.Value(1)}
+        recorderOpacity={new Animated.Value(1)}
         //  opacityHide={new Animated.Value(0)}
         actionSheetIcon={
           <CustomActionSheet
