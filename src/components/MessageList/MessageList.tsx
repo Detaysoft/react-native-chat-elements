@@ -33,6 +33,11 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
     });
   }, []);
 
+  const revertArray = array => {
+    var newArray = [];
+    for (let i = array.length - 1; i >= 0; i--) newArray.push(array[i]);
+    return newArray;
+  };
   return (
     <ScrollView
       contentContainerStyle={{flex: 0}}
@@ -58,7 +63,7 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
             <MessageView {...data}></MessageView>
           </TouchableOpacity>
         )}
-        {props.messageList?.reverse().map((item: any, i: any) => (
+        {revertArray(props.messageList).map((item: any, i: any) => (
           <MemorizedMessageView key={i} {...item} />
         ))}
         {props.endOfMam && (
