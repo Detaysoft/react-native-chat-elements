@@ -294,7 +294,7 @@ export type MessageViewType = IMessageViewProps & MessageType;
 export interface IMessageSenderProps {
   id?: string;
   type?: string;
-  recordAudio?: boolean;
+  isAudioRecord?: boolean;
   messageInputAreaStyle?: object;
   replyMessage?: IReplyMessageProps;
   textInputRef?: React.LegacyRef;
@@ -312,6 +312,7 @@ export interface IMessageSenderProps {
   sendMessageIcon?: JSX.Element;
   sendableMessage?: boolean;
   recorderOpacity: Animated.Value;
+  audioRecord: IAudioRecorderProps;
   inputOnContentSizeChange?: (
     e?: NativeSyntheticEvent<TextInputContentSizeChangeEventData>,
   ) => void;
@@ -320,7 +321,6 @@ export interface IMessageSenderProps {
   onActionSheet?: () => void;
   sendPhoto?: (item?) => void;
   onSendMessage?: () => void;
-  toggleAudioRecorder?: () => void;
 }
 
 export interface IAudioRecorderProps {

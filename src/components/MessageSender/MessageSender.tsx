@@ -10,7 +10,7 @@ const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
   return (
     <>
       <View style={[styles.footerArea]}>
-        {props.recordAudio === false && (
+        {props.isAudioRecord === false && (
           <>
             <View style={{width: 50}} />
             <Animated.View
@@ -113,33 +113,33 @@ const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
                 }}>
                 <TouchableOpacity
                   style={[styles.transparentButton, styles.alignBottom]}
-                  onPress={props.toggleAudioRecorder}>
+                  onPress={props.audioRecord.toggleAudioRecorder}>
                   {props.micIcon}
                 </TouchableOpacity>
               </Animated.View>
             )}
           </>
         )}
-        {props.recordAudio === true && (
+        {props.isAudioRecord === true && (
           <Animated.View style={{opacity: props.recorderOpacity}}>
             <AudioRecorder
-              chatId={props.id}
-              toggleAudioRecorder={props.toggleAudioRecorder}
-              recorded={false}
-              recording={false}
-              duration={0}
-              startRecording={'startRecording'}
-              beingRecorded={'beingRecorded'}
-              recordingFinished={'recorded'}
-              safeCloseIcon={<Text>X</Text>}
-              stopRecordIcon={<Text>D</Text>}
-              startRecordIcon={<Text>B</Text>}
-              sendRecordIcon={<Text>G</Text>}
-              recordTime={<Text>00:00</Text>}
-              onPressSafeClose={() => console.log('onPressSafeClose')}
-              onPressStopRecord={() => console.log('onPressStopRecord')}
-              onPressStartRecord={() => console.log('onPressStartRecord')}
-              onPressSendRecord={() => console.log('onPressSendRecord')}
+              chatId={props.audioRecord.chatId}
+              toggleAudioRecorder={props.audioRecord.toggleAudioRecorder}
+              recorded={props.audioRecord.recorded}
+              recording={props.audioRecord.recording}
+              duration={props.audioRecord.duration}
+              startRecording={props.audioRecord.startRecording}
+              beingRecorded={props.audioRecord.beingRecorded}
+              recordingFinished={props.audioRecord.recordingFinished}
+              safeCloseIcon={props.audioRecord.safeCloseIcon}
+              stopRecordIcon={props.audioRecord.stopRecordIcon}
+              startRecordIcon={props.audioRecord.startRecordIcon}
+              sendRecordIcon={props.audioRecord.sendRecordIcon}
+              recordTime={props.audioRecord.recordTime}
+              onPressSafeClose={props.audioRecord.onPressSafeClose}
+              onPressStopRecord={props.audioRecord.onPressStopRecord}
+              onPressStartRecord={props.audioRecord.onPressStartRecord}
+              onPressSendRecord={props.audioRecord.onPressSendRecord}
             />
           </Animated.View>
         )}

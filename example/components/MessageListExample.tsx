@@ -110,7 +110,7 @@ const MessageListExample = () => {
       <MessageSender
         id="string"
         type=""
-        recordAudio={true}
+        isAudioRecord={false}
         messageInputAreaStyle={{}}
         //  replyMessage={{}}
         textInputRef="React.LegacyRef"
@@ -149,7 +149,25 @@ const MessageListExample = () => {
         onActionSheet={() => console.log()}
         sendPhoto={() => console.log()}
         onSendMessage={() => addMessage()}
-        toggleAudioRecorder={() => console.log()}
+        audioRecord={{
+          chatId: 'jqnka',
+          toggleAudioRecorder: () => console.log('toggleAudioRecorder'),
+          recorded: false,
+          recording: false,
+          duration: 0,
+          startRecording: 'startRecording',
+          beingRecorded: 'beingRecorded',
+          recordingFinished: 'recorded',
+          safeCloseIcon: <Text>X</Text>,
+          stopRecordIcon: <Text>D</Text>,
+          startRecordIcon: <Text>B</Text>,
+          sendRecordIcon: <Text>G</Text>,
+          recordTime: <Text>00:00</Text>,
+          onPressSafeClose: () => console.log('onPressSafeClose'),
+          onPressStopRecord: () => console.log('onPressStopRecord'),
+          onPressStartRecord: () => console.log('onPressStartRecord'),
+          onPressSendRecord: () => console.log('onPressSendRecord'),
+        }}
       />
     </View>
   );
