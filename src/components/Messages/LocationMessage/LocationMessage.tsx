@@ -14,7 +14,7 @@ const LocationMessage: FC<ILocationMessageProps> = (
   return (
     <TouchableOpacity
       onLongPress={handleOnLongPress}
-      style={{...props.style, backgroundColor: 'red'}}
+      style={{...props.style}}
       onPress={props.onPress}>
       <Image
         style={[styles.chatMessageImage, props.imageStyle]}

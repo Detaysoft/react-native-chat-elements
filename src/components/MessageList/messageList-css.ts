@@ -9,13 +9,13 @@ const styles = StyleSheet.create({
   },
   contentAreaListView: {
     flex: 1,
-    paddingTop: 10,
+    // paddingTop: 10,
     ...Platform.select({
       ios: {
-        paddingBottom: 50,
+        //paddingBottom: 50,
       },
       android: {
-        paddingBottom: 25,
+        //  paddingBottom: 25,
       },
     }),
     minHeight: '100%',

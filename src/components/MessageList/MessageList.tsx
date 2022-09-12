@@ -2,7 +2,9 @@
 import React, {FC, useEffect, useState} from 'react';
 import {
   ActivityIndicator,
+  SafeAreaView,
   ScrollView,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
@@ -17,21 +19,14 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
   const [showMessageActions, setShowMessageActions] = useState(false);
   const [data, setdata] = useState('');
 
-  useEffect(() => {
-    setCallBack((data: any) => {
-      console.log(props.messageList);
-
-      setShowMessageActions(true);
-      let test = props.messageList.map(x => {
-        console.log(x);
-
-        if (x !== undefined && x.id === data) {
-          setdata(x);
-        }
-      });
-      console.log(test[0], 'from messagelist');
+  const setMessage = data => {
+    props.messageList.map(x => {
+      if (x !== undefined && x.id === data) {
+        setdata(x);
+        setShowMessageActions(true);
+      }
     });
-  }, []);
+  };
 
   const revertArray = array => {
     var newArray = [];
@@ -39,59 +34,92 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
     return newArray;
   };
   return (
-    <ScrollView
-      contentContainerStyle={{flex: 0}}
-      keyboardShouldPersistTaps={'always'}
-      onScroll={e => props.onScroll(e)}
-      scrollEventThrottle={100}
-      style={styles.contentArea}>
-      <View style={styles.contentAreaListView}>
-        {showMessageActions && (
-          <TouchableOpacity
-            onPress={() => setShowMessageActions(false)}
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              left: 0,
-              top: 0,
-              bottom: 0,
-              right: 0,
-              backgroundColor: 'rgba(52, 52, 52, 0.8)',
-              zIndex: 999999999999999999,
-            }}>
-            <MessageView {...data}></MessageView>
-          </TouchableOpacity>
-        )}
-        {revertArray(props.messageList).map((item: any, i: any) => (
-          <MemorizedMessageView key={i} {...item} />
-        ))}
-        {props.endOfMam && (
-          <View style={styles.notificationPanel}>
-            <View style={styles.notificationPanelContent}>
-              <Text
-                style={{
-                  marginLeft: 8,
-                  paddingTop: 2,
-                  paddingBottom: 2,
-                  color: '#fff',
-                  fontSize: 13,
-                }}>
-                {props.noMoreMessages}
-              </Text>
+    <>
+      <ScrollView
+        contentContainerStyle={{flex: 0}}
+        keyboardShouldPersistTaps={'always'}
+        onScroll={e => props.onScroll(e)}
+        scrollEventThrottle={100}
+        style={styles.contentArea}>
+        <View style={styles.contentAreaListView}>
+          {revertArray(props.messageList).map((item: any, i: any) => (
+            <MemorizedMessageView
+              key={i}
+              {...item}
+              onLongPress={() => setMessage(item.id)}
+            />
+          ))}
+          {props.endOfMam && (
+            <View style={styles.notificationPanel}>
+              <View style={styles.notificationPanelContent}>
+                <Text
+                  style={{
+                    marginLeft: 8,
+                    paddingTop: 2,
+                    paddingBottom: 2,
+                    color: '#fff',
+                    fontSize: 13,
+                  }}>
+                  {props.noMoreMessages}
+                </Text>
+              </View>
             </View>
+          )}
+          {props.mamLoading && (
+            <ActivityIndicator
+              animating={true}
+              style={styles.spinnerStyle}
+              size="large"
+              color="#8eadbc"
+            />
+          )}
+        </View>
+      </ScrollView>
+      {showMessageActions && (
+        <TouchableOpacity
+          style={{
+            position: 'absolute',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100%',
+            width: '100%',
+            left: 0,
+            top: 0,
+            bottom: 0,
+            right: 0,
+            backgroundColor: 'rgba(52, 52, 52, 0.6)',
+          }}
+          onPress={() => setShowMessageActions(false)}>
+          <View
+            style={{
+              transform: [{skewY: '180deg'}, {rotate: '180deg'}],
+            }}>
+            <View
+              style={{
+                backgroundColor: 'blue',
+                margin: 10,
+              }}>
+              <View>
+                <Text
+                  style={{
+                    padding: 15,
+                  }}>
+                  ejgfbvnıhweskfbnvkd
+                </Text>
+                <Text
+                  style={{
+                    padding: 15,
+                  }}>
+                  ejgfbvnıhweskfbnvkd
+                </Text>
+              </View>
+            </View>
+            {/* <MessageView {...data} /> */}
           </View>
-        )}
-        {props.mamLoading && (
-          <ActivityIndicator
-            animating={true}
-            style={styles.spinnerStyle}
-            size="large"
-            color="#8eadbc"
-          />
-        )}
-      </View>
-    </ScrollView>
+        </TouchableOpacity>
+      )}
+    </>
   );
 };
 

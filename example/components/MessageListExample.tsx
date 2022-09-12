@@ -99,13 +99,13 @@ const MessageListExample = () => {
         endOfMam={false}
         mamLoading={false}
         messageList={messageListArray}
-        onLoading={() => console.log('')}
-        reSendMessage={() => console.log('')}
-        downloadFile={() => console.log('')}
-        onMessageSelect={() => console.log('')}
-        openFile={() => console.log('')}
-        openMediaViewer={() => console.log('')}
-        onScroll={() => console.log('')}
+        onLoading={() => console.log('onLoading')}
+        reSendMessage={() => console.log('reSendMessage')}
+        downloadFile={() => console.log('downloadFile')}
+        onMessageSelect={() => console.log('onMessageSelect')}
+        openFile={() => console.log('openFile')}
+        openMediaViewer={() => console.log('openMediaViewer')}
+        onScroll={() => console.log('onScroll')}
       />
       <MessageSender
         id="string"
@@ -143,11 +143,11 @@ const MessageListExample = () => {
         micIcon={<Text>🎙️</Text>}
         cameraIcon={<Text>📷</Text>}
         sendableMessage={true}
-        inputOnContentSizeChange={() => console.log()}
-        inputOnChangeText={() => console.log()}
-        inputOnChange={() => console.log()}
-        onActionSheet={() => console.log()}
-        sendPhoto={() => console.log()}
+        inputOnContentSizeChange={() => console.log('inputOnContentSizeChange')}
+        inputOnChangeText={() => console.log('inputOnChangeText')}
+        inputOnChange={() => console.log('inputOnChange')}
+        onActionSheet={() => console.log('onActionSheet')}
+        sendPhoto={() => console.log('sendPhoto')}
         onSendMessage={() => addMessage()}
         audioRecord={{
           chatId: 'jqnka',

@@ -7,6 +7,13 @@ import ReplyMessage from '../Messages/ReplyMessage/ReplyMessage';
 import styles from './messageSender-css';
 
 const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
+  const handleChange = (e: Event) => {
+    if (e) {
+      props.isAudioRecord = false;
+    } else {
+      props.isAudioRecord = true;
+    }
+  };
   return (
     <>
       <View style={[styles.footerArea]}>
@@ -33,7 +40,10 @@ const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
                 multiline={props.inputMultiLine}
                 maxLength={props.inputMaxLength}
                 onContentSizeChange={props.inputOnContentSizeChange}
-                onChangeText={props.inputOnChangeText}
+                onChangeText={e => {
+                  handleChange(e);
+                  props.inputOnChangeText?.(e);
+                }}
                 onChange={props.inputOnChange}
               />
             </Animated.View>
@@ -86,22 +96,23 @@ const MessageSender: FC<IMessageSenderProps> = (props: IMessageSenderProps) => {
                 {props.cameraIcon}
               </TouchableOpacity>
             </Animated.View>
-            <Animated.View
-              style={{
-                opacity: props.opacityHide,
-                height: 40,
-                width: 30,
-                position: 'absolute',
-                right: 10,
-                bottom: 10,
-              }}>
-              <TouchableOpacity
-                style={[styles.transparentButton, styles.alignBottom]}
-                onPress={props.onSendMessage}>
-                {props.sendMessageIcon}
-              </TouchableOpacity>
-            </Animated.View>
-            {!props.sendableMessage && (
+            {props.sendableMessage ? (
+              <Animated.View
+                style={{
+                  opacity: props.opacityHide,
+                  height: 40,
+                  width: 30,
+                  position: 'absolute',
+                  right: 10,
+                  bottom: 10,
+                }}>
+                <TouchableOpacity
+                  style={[styles.transparentButton, styles.alignBottom]}
+                  onPress={props.onSendMessage}>
+                  {props.sendMessageIcon}
+                </TouchableOpacity>
+              </Animated.View>
+            ) : (
               <Animated.View
                 style={{
                   opacity: props.opacityShow,
