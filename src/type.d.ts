@@ -342,3 +342,9 @@ export interface IAudioRecorderProps {
   onPressSendRecord?: () => void;
   toggleAudioRecorder?: () => void;
 }
+
+export interface IMessageReactionProps {
+  showMessageActions: boolean;
+  data: MessageViewType;
+  onPressShowMessageActions: (item?) => void;
+}

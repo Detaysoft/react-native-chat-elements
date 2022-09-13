@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import {IMessageListProps, MessageType, MessageViewType} from '../../type';
+import MessageReaction from '../MessageReaction/MessageReaction';
 import MessageView from '../MessageView/MessageView';
 import {setCallBack} from '../test';
 import styles from './messageList-css';
@@ -76,32 +77,10 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
         </View>
       </ScrollView>
       {showMessageActions && (
-        <TouchableOpacity
-          style={{
-            position: 'absolute',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
-            width: '100%',
-            left: 0,
-            top: 0,
-            bottom: 0,
-            right: 0,
-            backgroundColor: 'rgba(52, 52, 52, 0.6)',
-          }}
-          onPress={() => setShowMessageActions(false)}>
-          <View
-            style={{
-              transform: [{skewY: '180deg'}, {rotate: '180deg'}],
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '60%',
-            }}>
-            <MessageView {...data} />
-          </View>
-        </TouchableOpacity>
+        <MessageReaction
+          onPressShowMessageActions={() => setShowMessageActions(false)}
+          data={data}
+        />
       )}
     </>
   );
