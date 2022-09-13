@@ -107,6 +107,7 @@ interface IMessage {
   seen?: 'notseen' | string;
   seenUsers?: Array;
   messageTextColor?: object;
+  onLongPress?: (item?) => void;
 }
 export interface IAudioMessageProps extends IMessage {
   audioURL?: string;
@@ -143,7 +144,6 @@ export interface IFileMessageProps extends IMessage {
   fileSizeConversion?: (item?) => string;
   openFile?: (item?) => void;
   downloadFile?: (item?) => void;
-  onLongPress?: (item?) => void;
 }
 
 export interface ILocationMessageProps extends IMessage {
@@ -151,7 +151,6 @@ export interface ILocationMessageProps extends IMessage {
   style?: object;
   onPress?: (item?) => void;
   locationURL?: (item?) => string;
-  onLongPress?: (item?) => void;
 }
 
 export type MessageType =
@@ -210,7 +209,6 @@ export interface IPhotoMessageProps extends IMessage {
   errorIcon?: JSX.Element;
   progress?: JSX.Element;
   onPress?: (item?) => void;
-  onLongPress?: (item?) => void;
   downloadFile?: (item?: any) => void;
   openMediaViewer?: (item?) => any;
 }
@@ -222,7 +220,6 @@ export interface IReplyMessageProps extends IMessage {
   closeButton?: bool;
   closeButtonIcon?: JSX.Element;
   message?: (item?) => string; //string
-  onLongPress?: (item?) => void;
 }
 
 export interface ISystemMessageProps extends IMessage {
@@ -231,8 +228,8 @@ export interface ISystemMessageProps extends IMessage {
 
 export interface ITextMessageProps extends IMessage {
   body?: string;
-  messageBody?: (item?) => JSX.Element;
   style?: object;
+  messageBody?: (item?) => JSX.Element;
 }
 
 export interface IVideoMessageProps extends IMessage {
@@ -254,7 +251,6 @@ export interface IVideoMessageProps extends IMessage {
   progress?: JSX.Element;
   onPress?: (item?) => void;
   onPressFile?: (item?) => void;
-  onLongPress?: (item?) => void;
 }
 
 export interface IMessageViewProps {
@@ -266,7 +262,7 @@ export interface IMessageViewProps {
   selectMessage?: func;
   cancelSelect?: func;
   openMediaViewer?: func;
-  onLongPressSelectMessage?: func;
+  onLongPressNotSended?: func;
   onPressCancelSelect?: func;
   onLongPressSelectMessage?: func;
   onPressGroupChat?: func;

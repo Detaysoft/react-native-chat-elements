@@ -48,6 +48,7 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
               key={i}
               {...item}
               onLongPress={() => setMessage(item.id)}
+              onLongPressSelectMessage={() => setMessage(item.id)}
             />
           ))}
           {props.endOfMam && (

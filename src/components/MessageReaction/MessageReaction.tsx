@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {IMessageReactionProps} from '../../type';
 import MessageView from '../MessageView/MessageView';
+import styles from './messageReaction-css';
 
 const MessageReaction: FC<IMessageReactionProps> = (
   props: IMessageReactionProps,
@@ -9,29 +10,16 @@ const MessageReaction: FC<IMessageReactionProps> = (
   return (
     <>
       <TouchableOpacity
-        style={{
-          position: 'absolute',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '100%',
-          width: '100%',
-          left: 0,
-          top: 0,
-          bottom: 0,
-          right: 0,
-          backgroundColor: 'rgba(52, 52, 52, 0.6)',
-        }}
+        style={styles.messageReactionContainer}
         onPress={props.onPressShowMessageActions}>
-        <View
-          style={{
-            transform: [{skewY: '180deg'}, {rotate: '180deg'}],
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '60%',
-          }}>
+        <View style={styles.body}>
+          <View style={[styles.icons, styles.reaction]}>
+            <Text>reactions</Text>
+          </View>
           <MessageView {...props.data} />
+          <View style={[styles.popup, styles.reaction]}>
+            <Text>Popup</Text>
+          </View>
         </View>
       </TouchableOpacity>
     </>

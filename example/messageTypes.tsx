@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Image, Text} from 'react-native';
 import {setData} from '../src/components/test';
 import {MessageType} from '../src/type';
 
@@ -134,13 +134,13 @@ export const locationMessage: MessageType = {
   sendStatusIcon: <Text>✓</Text>,
 };
 export const meetingMessage: MessageType = {
-  avatarIcon: <Text>AI</Text>,
+  avatarIcon: <Image source={require('../assets/download.png')} />,
   cancelSelect: () => console.log('cancel select'),
   dataSource: [],
   date: 'date',
   dateText: 'date',
   downloadFile: () => console.log('download file'),
-  icon: <Text>I</Text>,
+  icon: <Text>Icon</Text>,
   onPressMeetingVideoLink: () => console.log('onPressMeetingVideoLink'),
   onPressTitle: () => console.log('onPressMeetingVideoLink'),
   onPressToggle: () => console.log('onPressMeetingVideoLink'),
@@ -150,7 +150,7 @@ export const meetingMessage: MessageType = {
   selectMessage: () => console.log('onPressMeetingVideoLink'),
   type: 'meeting',
   recordIcon: <Text>RI</Text>,
-  subject: 'subject',
+  subject: 'bensu',
   title: 'title',
   toggleElement: <Text>TE</Text>,
   state: {participants: '', toggle: false},

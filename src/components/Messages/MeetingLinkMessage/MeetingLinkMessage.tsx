@@ -8,7 +8,7 @@ const MeetingLinkMessage: FC<IMeetingLinkMessageProps> = (
 ) => {
   return (
     <View style={styles.meetingLinkContainer}>
-      <TouchableOpacity onPress={props.onPress}>
+      <TouchableOpacity onPress={props.onPress} onLongPress={props.onLongPress}>
         <View style={styles.meetingLinkContent}>
           <View style={styles.meetingLinkItem}>
             <View style={styles.meetingLinkTitle}>
