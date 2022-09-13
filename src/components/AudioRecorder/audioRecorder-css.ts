@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
-    width: '100%',
+    width: 300,
   },
   transparentButton: {
     backgroundColor: 'transparent',

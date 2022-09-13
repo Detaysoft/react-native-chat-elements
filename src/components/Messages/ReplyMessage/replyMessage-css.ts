@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     overflow: 'hidden',
     marginTop: 5,
-    width: '80%',
+    width: 300,
   },
   replyMessageContainer: {
     overflow: 'hidden',

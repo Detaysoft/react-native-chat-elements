@@ -15,18 +15,20 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(52, 52, 52, 0.6)',
   },
   body: {
-    transform: [{skewY: '180deg'}, {rotate: '180deg'}],
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '60%',
+    position: 'relative',
+    zIndex: 999999999,
   },
   reaction: {
-    transform: [{skewY: '180deg'}, {rotate: '180deg'}],
-    backgroundColor: 'red',
+    backgroundColor: 'white',
   },
-  icons: {},
-  popup: {},
+  icons: {
+    padding: 10,
+    borderRadius: 50,
+  },
+  popup: {padding: 10, borderRadius: 10},
 });
 
 export default styles;

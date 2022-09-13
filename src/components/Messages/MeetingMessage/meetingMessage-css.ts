@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
-    minWidth: 310,
-    maxWidth: 310,
+    minWidth: 300,
+    maxWidth: 300,
   },
   mtmgContainerContent: {
     backgroundColor: '#f5f5f5',

@@ -358,5 +358,7 @@ export interface IAudioRecorderProps {
 export interface IMessageReactionProps {
   showMessageActions: boolean;
   data: MessageViewType;
+  iconStyle: object;
+  icons: JSX.Element;
   onPressShowMessageActions: (item?) => void;
 }
