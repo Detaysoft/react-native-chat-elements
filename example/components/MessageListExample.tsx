@@ -55,7 +55,7 @@ const MessageListExample = () => {
       case 9:
         setMessage('videoMessage');
       default:
-        setMessage('videoMessage');
+        setMessage('meetingMessage');
         break;
     }
     setMessageListArray([...messageListArray, randomMessage(message)]);

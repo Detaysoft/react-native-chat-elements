@@ -68,6 +68,9 @@ const MessageView: FC<MessageViewType> = (props: MessageViewType) => {
 
               {props.type === 'file' && <MessageTypes.FileMessage {...props} />}
 
+              {props.type === 'meeting' && (
+                <MessageTypes.MeetingMessage {...props} />
+              )}
               {props.type === 'meetingLink' && (
                 <MessageTypes.MeetingLinkMessage {...props} />
               )}

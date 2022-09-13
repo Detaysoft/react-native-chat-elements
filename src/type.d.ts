@@ -170,7 +170,23 @@ export interface IMeetingLinkMessageProps extends IMessage {
   onPress?: (item?) => void;
 }
 export interface IMeetingMessageProps extends IMessage {
-  dataSource?: array;
+  dataSource?: {
+    avatar: any;
+    src: string;
+    title: string;
+    message: string;
+    event: {
+      title: string;
+      avatars: array;
+      avatarsLimit: number;
+    };
+    record: {
+      avatar: string;
+      time: string;
+      title: string;
+      savedBy: string;
+    };
+  }[];
   title?: string;
   dateText?: string;
   subject?: string;
