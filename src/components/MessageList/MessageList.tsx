@@ -94,28 +94,12 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
           <View
             style={{
               transform: [{skewY: '180deg'}, {rotate: '180deg'}],
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '60%',
             }}>
-            <View
-              style={{
-                backgroundColor: 'blue',
-                margin: 10,
-              }}>
-              <View>
-                <Text
-                  style={{
-                    padding: 15,
-                  }}>
-                  ejgfbvnıhweskfbnvkd
-                </Text>
-                <Text
-                  style={{
-                    padding: 15,
-                  }}>
-                  ejgfbvnıhweskfbnvkd
-                </Text>
-              </View>
-            </View>
-            {/* <MessageView {...data} /> */}
+            <MessageView {...data} />
           </View>
         </TouchableOpacity>
       )}

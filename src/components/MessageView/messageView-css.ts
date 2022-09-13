@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   messageBox: {
+    width: '100%',
     paddingLeft: 10,
     paddingRight: 10,
     transform: [{skewY: '180deg'}, {rotate: '180deg'}],
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   seperatorDateText: {
-    flex: 1,
+    // flex: 1,
     textAlign: 'center',
     marginTop: 5,
     color: '#fff',
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   sendingChatMessageItemContainer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'column',
     alignItems: 'flex-end',
     //marginRight: 15,
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff00',
   },
   receivedChatMessageItemContainer: {
-    flex: 0.8,
+    //   flex: 0.8,
     flexDirection: 'column',
     alignItems: 'flex-start',
     marginRight: 5,

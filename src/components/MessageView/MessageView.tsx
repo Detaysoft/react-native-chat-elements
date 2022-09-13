@@ -86,7 +86,7 @@ const MessageView: FC<MessageViewType> = (props: MessageViewType) => {
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'flex-end',
-                    flex: 1,
+                    // flex: 1,
                   },
                   props.type === 'text' && {
                     position: 'absolute',
