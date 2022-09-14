@@ -38,6 +38,7 @@ const MessageView: FC<MessageViewType> = (props: MessageViewType) => {
               props.position === 'right'
                 ? styles.sendingChatMessageItemContainer
                 : styles.receivedChatMessageItemContainer,
+              props.reactions && {marginVertical: 10},
             ]}>
             <View
               style={[
@@ -110,6 +111,23 @@ const MessageView: FC<MessageViewType> = (props: MessageViewType) => {
                   props.retracted !== true &&
                   props.sendStatusIcon}
               </View>
+              {props.reactions && (
+                <View
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    position: 'absolute',
+                    bottom: -10,
+                    left: 10,
+                    backgroundColor: '#5ba7c5',
+                    borderRadius: 9999,
+                    padding: 3,
+                    borderColor: 'white',
+                    borderWidth: 1,
+                  }}>
+                  {props.reactions?.map((reaction: JSX.Element) => reaction)}
+                </View>
+              )}
             </View>
           </View>
 

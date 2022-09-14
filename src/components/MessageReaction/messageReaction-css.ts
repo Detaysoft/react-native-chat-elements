@@ -20,15 +20,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     position: 'relative',
     zIndex: 999999999,
+    marginBottom: 50,
   },
   reaction: {
+    display: 'flex',
+    alignSelf: 'center',
+    justifyContent: 'center',
     backgroundColor: 'white',
   },
   icons: {
+    maxWidth: 150,
+    flexDirection: 'row',
     padding: 10,
     borderRadius: 50,
   },
-  action: {padding: 10, borderRadius: 10},
+  action: {
+    padding: 10,
+    borderRadius: 10,
+    flexDirection: 'column',
+    maxHeight: 150,
+  },
 });
 
 export default styles;

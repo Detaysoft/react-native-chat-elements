@@ -99,24 +99,44 @@ const MessageListExample = () => {
         endOfMam={false}
         mamLoading={false}
         messageList={messageListArray}
-        messageReactionIcon={
-          <View style={{display: 'flex', flexDirection: 'row'}}>
-            <Text>👍</Text>
-            <Text>❤️</Text>
-            <Text>😂</Text>
-            <Text>😶</Text>
-            <Text>😅</Text>
-            <Text>🙏</Text>
-          </View>
-        }
-        messageReactionAction={
-          <View style={{display: 'flex', flexDirection: 'column'}}>
-            <Text>⬅️ yanıtla</Text>
-            <Text>➡️ ilet</Text>
-            <Text>🗑️ sil</Text>
-            <Text>📋 kopyala</Text>
-          </View>
-        }
+        messageReactionIcon={[
+          <Text>👍</Text>,
+          <Text>❤️</Text>,
+          <Text>😂</Text>,
+          <Text>😶</Text>,
+          <Text>😅</Text>,
+          <Text>🙏</Text>,
+          <Text>👍</Text>,
+          <Text>❤️</Text>,
+          <Text>😂</Text>,
+          <Text>😶</Text>,
+          <Text>😅</Text>,
+          <Text>🙏</Text>,
+          <Text>👍</Text>,
+          <Text>❤️</Text>,
+          <Text>😂</Text>,
+          <Text>😶</Text>,
+          <Text>😅</Text>,
+          <Text>🙏</Text>,
+        ]}
+        messageReactionAction={[
+          <Text>⬅️ yanıtla</Text>,
+          <Text>➡️ ilet</Text>,
+          <Text>🗑️ sil</Text>,
+          <Text>📋 kopyala</Text>,
+          <Text>⬅️ yanıtla</Text>,
+          <Text>➡️ ilet</Text>,
+          <Text>🗑️ sil</Text>,
+          <Text>📋 kopyala</Text>,
+          <Text>⬅️ yanıtla</Text>,
+          <Text>➡️ ilet</Text>,
+          <Text>🗑️ sil</Text>,
+          <Text>📋 kopyala</Text>,
+          <Text>⬅️ yanıtla</Text>,
+          <Text>➡️ ilet</Text>,
+          <Text>🗑️ sil</Text>,
+          <Text>📋 kopyala</Text>,
+        ]}
         onLoading={() => console.log('onLoading')}
         reSendMessage={() => console.log('reSendMessage')}
         downloadFile={() => console.log('downloadFile')}

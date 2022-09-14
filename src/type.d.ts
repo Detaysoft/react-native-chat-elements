@@ -107,7 +107,7 @@ interface IMessage {
   seen?: 'notseen' | string;
   seenUsers?: Array;
   messageTextColor?: object;
-  reactions: Array;
+  reactions?: JSX.Element[];
   onLongPress?: (item?) => void;
 }
 export interface IAudioMessageProps extends IMessage {
@@ -293,8 +293,8 @@ export interface IMessageListProps {
   endOfMam: bool;
   mamLoading: bool;
   messageList: MessageType[];
-  messageReactionIcon?: JSX.Element;
-  messageReactionAction?: JSX.Element;
+  messageReactionIcon?: JSX.Element[];
+  messageReactionAction?: JSX.Element[];
   onLoading: (item?) => void;
   reSendMessage: (item?) => void;
   downloadFile: (item?) => void;
@@ -362,7 +362,7 @@ export interface IMessageReactionProps {
   showMessageActions: boolean;
   data: MessageViewType;
   iconStyle: object;
-  icons: JSX.Element;
-  actions: JSX.Element;
+  icons?: JSX.Element[];
+  actions?: JSX.Element[];
   onPressShowMessageActions: (item?) => void;
 }

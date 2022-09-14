@@ -47,6 +47,7 @@ export const audioMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>😀</Text>],
 };
 export const fileMessage: MessageType = {
   type: 'file',
@@ -94,6 +95,7 @@ export const fileMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>🖖</Text>],
 };
 export const locationMessage: MessageType = {
   type: 'location',
@@ -132,6 +134,7 @@ export const locationMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>👻</Text>],
 };
 export const meetingMessage: MessageType = {
   avatarIcon: <Image source={require('../assets/download.png')} />,
@@ -184,6 +187,7 @@ export const meetingMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>😡</Text>, <Text>👀</Text>, <Text>👋</Text>],
 };
 export const meetingLinkMessage: MessageType = {
   type: 'meetingLink',
@@ -221,6 +225,7 @@ export const meetingLinkMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>🥶</Text>],
 };
 export const photoMessage: MessageType = {
   type: 'photo',
@@ -264,6 +269,7 @@ export const photoMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>🤖</Text>],
 };
 export const replyMessage: MessageType = {
   type: 'reply',
@@ -305,6 +311,7 @@ export const replyMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>👣</Text>],
 };
 export const systemMessage: MessageType = {
   type: 'system',
@@ -339,6 +346,7 @@ export const systemMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>🙏</Text>],
 };
 export const textMessage: MessageType = {
   type: 'text',
@@ -375,6 +383,7 @@ export const textMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>👀</Text>],
 };
 export const videoMessage: MessageType = {
   type: 'video',
@@ -428,4 +437,5 @@ export const videoMessage: MessageType = {
     retractedColor: '#fff',
   },
   sendStatusIcon: <Text>✓</Text>,
+  reactions: [<Text>🧠</Text>],
 };
