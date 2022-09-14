@@ -99,6 +99,24 @@ const MessageListExample = () => {
         endOfMam={false}
         mamLoading={false}
         messageList={messageListArray}
+        messageReactionIcon={
+          <View style={{display: 'flex', flexDirection: 'row'}}>
+            <Text>👍</Text>
+            <Text>❤️</Text>
+            <Text>😂</Text>
+            <Text>😶</Text>
+            <Text>😅</Text>
+            <Text>🙏</Text>
+          </View>
+        }
+        messageReactionAction={
+          <View style={{display: 'flex', flexDirection: 'column'}}>
+            <Text>⬅️ yanıtla</Text>
+            <Text>➡️ ilet</Text>
+            <Text>🗑️ sil</Text>
+            <Text>📋 kopyala</Text>
+          </View>
+        }
         onLoading={() => console.log('onLoading')}
         reSendMessage={() => console.log('reSendMessage')}
         downloadFile={() => console.log('downloadFile')}

@@ -293,6 +293,8 @@ export interface IMessageListProps {
   endOfMam: bool;
   mamLoading: bool;
   messageList: MessageType[];
+  messageReactionIcon?: JSX.Element;
+  messageReactionAction?: JSX.Element;
   onLoading: (item?) => void;
   reSendMessage: (item?) => void;
   downloadFile: (item?) => void;

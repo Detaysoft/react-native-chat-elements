@@ -81,24 +81,8 @@ const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {
         <MessageReaction
           onPressShowMessageActions={() => setShowMessageActions(false)}
           data={data}
-          icons={
-            <View style={{display: 'flex', flexDirection: 'row'}}>
-              <Text>👍</Text>
-              <Text>❤️</Text>
-              <Text>😂</Text>
-              <Text>😶</Text>
-              <Text>😅</Text>
-              <Text>🙏</Text>
-            </View>
-          }
-          actions={
-            <View style={{display: 'flex', flexDirection: 'column'}}>
-              <Text>⬅️ yanıtla</Text>
-              <Text>➡️ ilet</Text>
-              <Text>🗑️ sil</Text>
-              <Text>📋 kopyala</Text>
-            </View>
-          }
+          icons={props.messageReactionIcon}
+          actions={props.messageReactionAction}
         />
       )}
     </>
