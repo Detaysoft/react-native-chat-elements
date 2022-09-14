@@ -12,15 +12,15 @@ const MessageReaction: FC<IMessageReactionProps> = (
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 2000,
+      duration: 1000,
       useNativeDriver: true,
     }).start();
 
     return () => {
       Animated.timing(fadeAnim, {
         toValue: 0,
-        duration: 2000,
-        useNativeDriver: true,
+        duration: 500,
+        useNativeDriver: false,
       }).start();
     };
   }, []);
@@ -32,26 +32,12 @@ const MessageReaction: FC<IMessageReactionProps> = (
         onPress={props.onPressShowMessageActions}>
         <Animated.View style={[styles.body, {opacity: fadeAnim}]}>
           <View style={[styles.icons, styles.reaction, props.iconStyle]}>
-            <View style={{display: 'flex', flexDirection: 'row'}}>
-              <Text>👍</Text>
-              <Text>❤️</Text>
-              <Text>😂</Text>
-              <Text>😶</Text>
-              <Text>😅</Text>
-              <Text>🙏</Text>
-            </View>
+            {props.icons}
           </View>
           <View style={{transform: [{skewY: '180deg'}, {rotate: '180deg'}]}}>
             <MessageView {...props.data} />
           </View>
-          <View style={[styles.popup, styles.reaction]}>
-            <View style={{display: 'flex', flexDirection: 'column'}}>
-              <Text>⬅️ yanıtla</Text>
-              <Text>➡️ ilet</Text>
-              <Text>🗑️ sil</Text>
-              <Text>📋 kopyala</Text>
-            </View>
-          </View>
+          <View style={[styles.action, styles.reaction]}>{props.actions}</View>
         </Animated.View>
       </TouchableOpacity>
     </>

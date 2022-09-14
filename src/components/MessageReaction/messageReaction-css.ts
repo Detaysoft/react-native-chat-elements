@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 50,
   },
-  popup: {padding: 10, borderRadius: 10},
+  action: {padding: 10, borderRadius: 10},
 });
 
 export default styles;

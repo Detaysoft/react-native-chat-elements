@@ -107,6 +107,7 @@ interface IMessage {
   seen?: 'notseen' | string;
   seenUsers?: Array;
   messageTextColor?: object;
+  reactions: Array;
   onLongPress?: (item?) => void;
 }
 export interface IAudioMessageProps extends IMessage {
@@ -360,5 +361,6 @@ export interface IMessageReactionProps {
   data: MessageViewType;
   iconStyle: object;
   icons: JSX.Element;
+  actions: JSX.Element;
   onPressShowMessageActions: (item?) => void;
 }
