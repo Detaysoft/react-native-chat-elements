@@ -1,18 +1,9 @@
 // @ts-nocheck
-import React, {FC, useEffect, useState} from 'react';
-import {
-  ActivityIndicator,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import {IMessageListProps, MessageType, MessageViewType} from '../../type';
+import React, {FC, useState} from 'react';
+import {ActivityIndicator, ScrollView, Text, View} from 'react-native';
+import {IMessageListProps} from '../../type';
 import MessageReaction from '../MessageReaction/MessageReaction';
 import MessageView from '../MessageView/MessageView';
-import {setCallBack} from '../test';
 import styles from './messageList-css';
 
 const MessageList: FC<IMessageListProps> = (props: IMessageListProps) => {

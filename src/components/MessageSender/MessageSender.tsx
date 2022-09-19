@@ -1,8 +1,7 @@
 import React, {FC} from 'react';
-import {Animated, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Animated, TextInput, TouchableOpacity, View} from 'react-native';
 import {IMessageSenderProps} from '../../type';
 import AudioRecorder from '../AudioRecorder/AudioRecorder';
-import CustomActionSheet from '../CustomActionSheet/CustomActionSheet';
 import ReplyMessage from '../Messages/ReplyMessage/ReplyMessage';
 import styles from './messageSender-css';
 

@@ -121,7 +121,8 @@ const MessageView: FC<MessageViewType> = (props: MessageViewType) => {
                     left: 10,
                     backgroundColor: '#5ba7c5',
                     borderRadius: 9999,
-                    padding: 3,
+                    paddingHorizontal: 3,
+                    paddingVertical: 2,
                     borderColor: 'white',
                     borderWidth: 1,
                   }}>

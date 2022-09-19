@@ -1,12 +1,5 @@
 import React, {FC, useEffect, useRef} from 'react';
-import {
-  Animated,
-  Easing,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Animated, ScrollView, TouchableOpacity, View} from 'react-native';
 import {IMessageReactionProps} from '../../type';
 import MessageView from '../MessageView/MessageView';
 import styles from './messageReaction-css';
@@ -23,11 +16,7 @@ const MessageReaction: FC<IMessageReactionProps> = (
       duration: 1000,
       useNativeDriver: true,
     }).start();
-    Animated.timing(wave, {
-      toValue: 0,
-      duration: 2000,
-      useNativeDriver: true,
-    });
+    // waveAnim();
     return () => {
       Animated.timing(fadeAnim, {
         toValue: 0,
@@ -36,6 +25,16 @@ const MessageReaction: FC<IMessageReactionProps> = (
       }).start();
     };
   }, []);
+
+  // const waveAnim = () => {
+  //   props.icons?.map((icon, i) => {
+  //     Animated.timing(wave, {
+  //       toValue: (i + 1) * 10,
+  //       duration: i * 100,
+  //       useNativeDriver: true,
+  //     }).start(() => wave.setValue(0));
+  //   });
+  // };
 
   return (
     <TouchableOpacity
@@ -48,7 +47,11 @@ const MessageReaction: FC<IMessageReactionProps> = (
             showsHorizontalScrollIndicator={false}
             style={{flexGrow: 0}}>
             {props.icons?.map((icon: JSX.Element, i: number) => (
-              <TouchableOpacity key={i}>{icon}</TouchableOpacity>
+              <TouchableOpacity key={i}>
+                {/* <Animated.View style={{transform: [{translateY: wave}]}}> */}
+                {icon}
+                {/* </Animated.View> */}
+              </TouchableOpacity>
             ))}
           </ScrollView>
         </View>
