@@ -16,7 +16,7 @@ const MessageReaction: FC<IMessageReactionProps> = (
       duration: 1000,
       useNativeDriver: true,
     }).start();
-    // waveAnim();
+    waveAnim();
     return () => {
       Animated.timing(fadeAnim, {
         toValue: 0,
@@ -26,15 +26,28 @@ const MessageReaction: FC<IMessageReactionProps> = (
     };
   }, []);
 
-  // const waveAnim = () => {
-  //   props.icons?.map((icon, i) => {
-  //     Animated.timing(wave, {
-  //       toValue: (i + 1) * 10,
-  //       duration: i * 100,
-  //       useNativeDriver: true,
-  //     }).start(() => wave.setValue(0));
-  //   });
-  // };
+  const waveAnim = () => {
+    props.icons?.map((icon, i) => {
+      Animated.timing(wave, {
+        toValue: 10,
+        duration: i * 100,
+        useNativeDriver: true,
+      }).start(() => wave.setValue(0));
+    });
+  };
+
+  const interpolateRotating = wave.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '720deg'],
+  });
+
+  const animatedStyle = {
+    transform: [
+      {
+        rotate: interpolateRotating,
+      },
+    ],
+  };
 
   return (
     <TouchableOpacity
@@ -48,9 +61,7 @@ const MessageReaction: FC<IMessageReactionProps> = (
             style={{flexGrow: 0}}>
             {props.icons?.map((icon: JSX.Element, i: number) => (
               <TouchableOpacity key={i}>
-                {/* <Animated.View style={{transform: [{translateY: wave}]}}> */}
-                {icon}
-                {/* </Animated.View> */}
+                <Animated.View style={animatedStyle}>{icon}</Animated.View>
               </TouchableOpacity>
             ))}
           </ScrollView>
