@@ -29,7 +29,7 @@ const MessageReaction: FC<IMessageReactionProps> = (
   const waveAnim = () => {
     props.icons?.map((icon, i) => {
       Animated.timing(wave, {
-        toValue: 10,
+        toValue: 1,
         duration: i * 100,
         useNativeDriver: true,
       }).start(() => wave.setValue(0));
