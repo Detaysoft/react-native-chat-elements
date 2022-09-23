@@ -29,7 +29,7 @@ export interface IPopupProps {
   buttonTitle?: string;
 }
 
-export interface IActionSheet {
+export interface IActionSheetProps {
   button?: IChatButtonProps;
   title?: string;
   options: string[];
@@ -77,7 +77,7 @@ export interface IChatListProps {
 }
 
 /** Message Types */
-interface IMessage {
+interface IMessageProps {
   type?:
     | 'location'
     | 'photo'
@@ -110,7 +110,7 @@ interface IMessage {
   reactions?: JSX.Element[];
   onLongPress?: (item?) => void;
 }
-export interface IAudioMessageProps extends IMessage {
+export interface IAudioMessageProps extends IMessageProps {
   audioURL?: string;
   duration?: number;
   started?: boolean;
@@ -124,7 +124,7 @@ export interface IAudioMessageProps extends IMessage {
   onResumePlayer?: (item?) => void;
 }
 
-export interface IFileMessageProps extends IMessage {
+export interface IFileMessageProps extends IMessageProps {
   id?: string;
   body?: string;
   progress?: JSX.Element;
@@ -147,7 +147,7 @@ export interface IFileMessageProps extends IMessage {
   downloadFile?: (item?) => void;
 }
 
-export interface ILocationMessageProps extends IMessage {
+export interface ILocationMessageProps extends IMessageProps {
   imageStyle?: object;
   style?: object;
   onPress?: (item?) => void;
@@ -165,12 +165,12 @@ export type MessageType =
   | ({type: 'meeting'} & IMeetingMessageProps)
   | ({type: 'meetingLink'} & IMeetingLinkMessageProps)
   | ({type: 'reply'} & IReplyMessageProps);
-export interface IMeetingLinkMessageProps extends IMessage {
+export interface IMeetingLinkMessageProps extends IMessageProps {
   title?: string;
   icon?: JSX.Element;
   onPress?: (item?) => void;
 }
-export interface IMeetingMessageProps extends IMessage {
+export interface IMeetingMessageProps extends IMessageProps {
   dataSource?: {
     avatar: any;
     src: string;
@@ -210,7 +210,7 @@ export interface IMeetingMessageProps extends IMessage {
   openImageViewer?: (item?) => any;
 }
 
-export interface IPhotoMessageProps extends IMessage {
+export interface IPhotoMessageProps extends IMessageProps {
   id?: string;
   data?: {
     status?: {
@@ -230,7 +230,7 @@ export interface IPhotoMessageProps extends IMessage {
   openMediaViewer?: (item?) => any;
 }
 
-export interface IReplyMessageProps extends IMessage {
+export interface IReplyMessageProps extends IMessageProps {
   titleColor?: string;
   title?: string;
   photoURL?: ImageSourcePropType;
@@ -239,17 +239,17 @@ export interface IReplyMessageProps extends IMessage {
   message?: (item?) => string; //string
 }
 
-export interface ISystemMessageProps extends IMessage {
+export interface ISystemMessageProps extends IMessageProps {
   date?: (item?) => string;
 }
 
-export interface ITextMessageProps extends IMessage {
+export interface ITextMessageProps extends IMessageProps {
   body?: string;
   style?: object;
   messageBody?: (item?) => JSX.Element;
 }
 
-export interface IVideoMessageProps extends IMessage {
+export interface IVideoMessageProps extends IMessageProps {
   message?: {
     data?: {
       thumbnailURL?: string;
@@ -366,3 +366,26 @@ export interface IMessageReactionProps {
   actions?: JSX.Element[];
   onPressShowMessageActions: (item?) => void;
 }
+
+export class Avatar extends React.Component<IAvatarProps> {}
+export class ChatButton extends React.Component<IChatButtonProps> {}
+export class Popup extends React.Component<IPopupProps> {}
+export class ActionSheet extends React.Component<IActionSheetProps> {}
+export class ChatListItem extends React.Component<IChatListItemProps> {}
+export class ChatList extends React.Component<IChatListProps> {}
+export class Message extends React.Component<IMessageProps> {}
+export class AudioMessage extends React.Component<IAudioMessageProps> {}
+export class FileMessage extends React.Component<IFileMessageProps> {}
+export class LocationMessage extends React.Component<ILocationMessageProps> {}
+export class MeetingLinkMessage extends React.Component<IMeetingLinkMessageProps> {}
+export class MeetingMessage extends React.Component<IMeetingMessageProps> {}
+export class PhotoMessage extends React.Component<IPhotoMessageProps> {}
+export class ReplyMessage extends React.Component<IReplyMessageProps> {}
+export class SystemMessage extends React.Component<ISystemMessageProps> {}
+export class TextMessage extends React.Component<ITextMessageProps> {}
+export class VideoMessage extends React.Component<IVideoMessageProps> {}
+export class MessageView extends React.Component<IMessageViewProps> {}
+export class MessageList extends React.Component<IMessageListProps> {}
+export class MessageSender extends React.Component<IMessageSenderProps> {}
+export class AudioRecorder extends React.Component<IAudioRecorderProps> {}
+export class MessageReaction extends React.Component<IMessageReactionProps> {}

@@ -1,11 +1,12 @@
 import React, {Component, FC} from 'react';
 import {View} from 'react-native';
-import {IActionSheet} from '../../type';
-import ActionSheet from 'react-native-actionsheet';
+import {IActionSheetProps} from '../../type';
+import ActionSheet, {ActionSheetProps} from 'react-native-actionsheet';
 import ChatButton from '../ChatButton/ChatButton';
 
-class CustomActionSheet extends Component<IActionSheet> {
-  constructor(props: IActionSheet) {
+class CustomActionSheet extends Component<IActionSheetProps> {
+  ActionSheet: ActionSheetProps | any;
+  constructor(props: IActionSheetProps) {
     super(props);
   }
 
